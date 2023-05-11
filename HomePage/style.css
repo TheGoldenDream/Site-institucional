@@ -18,8 +18,8 @@
 
 body{
     background-color: black;
-    min-height: 100vh;
-    
+    height: 100vh;
+    width: 100vw;
     overflow-x: hidden;
 }
 header{
@@ -166,6 +166,8 @@ header ul li #Sign_In{
     padding-top: 20%;
     margin-bottom: -20%;
     padding-bottom: 15%;
+    justify-content: center;
+    display: flex;
 }
 
 .quizContainer .content{
@@ -179,7 +181,6 @@ header ul li #Sign_In{
 
 .quizContainer .content .image{
     position: relative;
-    max-width: 50%;
     height: fit-content;
     top: 60px;
 }
@@ -189,7 +190,6 @@ header ul li #Sign_In{
     max-width: 50%;
     height: fit-content;
     top: 10px;
-    text-align: left;
 }
 
 
@@ -227,6 +227,8 @@ header ul li #Sign_In{
 footer{
     width: 100%;
     height: fit-content;
+    display: flex;
+    flex-direction: column;
 }
 
 footer .main{
