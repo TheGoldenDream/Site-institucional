@@ -81,7 +81,7 @@ header ul li #Sign_In{
     transition: 1s;
 }
 
-.login{
+.cadastro{
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -89,7 +89,7 @@ header ul li #Sign_In{
     justify-content: center;
 }
 
-.login .cardLogin{
+.cadastro .cardCadastro{
     position: relative;
     top: 5%;
     background-color: gold;
@@ -100,15 +100,14 @@ header ul li #Sign_In{
     align-items: center;
 }
 
-
-.login .cardLogin .campo{
+.cadastro .cardCadastro .campo{
     display: flex;
     flex-direction: column;
     justify-content: start;
     width: 80%;
 }
 
-.login .cardLogin{
+.cadastro .cardCadastro{
     height: 50%;
     width: 30%;
     border: 3px rgb(49, 49, 49) solid;
