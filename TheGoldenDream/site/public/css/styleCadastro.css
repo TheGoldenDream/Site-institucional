@@ -1,0 +1,149 @@
+@font-face {
+    font-family: Poppins;
+    src: url(../assets/font/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins-bold;
+    src: url(../assets/font/Poppins-Bold.ttf);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body{
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+    background-image: url('../assets/img/background.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 120%;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 6%;
+    min-width: 100%;
+    height: fit-content;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+header ul {
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a{
+    display: inline-block;
+    color: gold;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+header ul li :hover{
+    /* transform: translateY(-5%); */
+    transform: scale(1.1);
+    transition: 0.5s;
+    color: white;
+}
+header ul li #Sign_In{
+    display: inline-block;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: gold;
+    border-radius: 3%;
+    margin: 0 5px;
+}
+
+.logo .image img:hover{
+    transform: rotate(360deg);
+    transition: 1s;
+}
+
+.cadastro{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cadastro .cardCadastro{
+    position: relative;
+    top: 5%;
+    background-color: gold;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+.cadastro .cardCadastro .campo{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 80%;
+}
+
+.cadastro .cardCadastro{
+    height: 65%;
+    width: 30%;
+    border: 3px rgb(49, 49, 49) solid;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+input{
+    padding: 4%;
+    border-radius: 15px;
+    background-color: white;
+    color: black;
+    border: none;
+}
+
+button{
+    padding: 10px 10px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3%;
+    background-color: black;
+    color: gold;
+    cursor: pointer;
+    margin-top: 3%;
+    font-size: 1em;
+}
+h2{
+    font-family: 'Poppins-bold';
+    font-weight: 100;
+    margin: 0;
+    padding: 0;
+}
+
+button:hover{
+    transform: translateY(-10%);
+    transition: 0.5s;
+}
