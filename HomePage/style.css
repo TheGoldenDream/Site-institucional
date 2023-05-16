@@ -1,0 +1,274 @@
+@font-face {
+    font-family: Poppins;
+    src: url(./font/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: Poppins-bold;
+    src: url(./font/Poppins-Bold.ttf);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 100px;
+    min-width: 100%;
+    height: fit-content;
+    background-color: black;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+}
+header ul {
+    display: flex;
+}
+
+header ul li {
+    list-style: none;
+}
+
+header ul li a{
+    display: inline-block;
+    color: gold;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 20px;
+}
+header ul li :hover{
+    /* transform: translateY(-5%); */
+    transform: scale(1.1);
+    transition: 0.5s;
+    color: white;
+}
+header ul li #Sign_In{
+    display: inline-block;
+    color: black;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: gold;
+    border-radius: 3%;
+    margin: 0 5px;
+}
+
+.logo .image img:hover{
+    transform: rotate(360deg);
+    transition: 1s;
+}
+
+
+
+.homeContainer{
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    padding-top: 3%;
+    
+}
+
+.homeContainer .content{
+    display: flex;
+    height: fit-content;
+    max-width: 100%;
+    padding: 0 100px;
+    justify-content: space-between;
+    padding-bottom: 8%;
+}
+.homeContainer .content .textBox{
+    position: relative;
+    max-width: 60%;
+    height: fit-content;
+    top: 120px;
+}
+
+.homeContainer .content .textBox .tittle{
+    padding-bottom: 30px;
+}
+
+.homeContainer .content .textBox .tittle h2{
+    font-size: 2.1em;
+    color: white;
+}
+
+.homeContainer .content .textBox .tittle span{
+    color: #ffd700;
+}
+
+.homeContainer .content .textBox .body p{
+    font-size: 1.05em;
+    color: white;
+    font-weight: 100;
+}
+.homeContainer .content .textBox .body span{
+    color: #ffd700;
+}
+
+.homeContainer .content .textBox .button a{
+    position: relative;
+    text-decoration: none;
+    color: black;
+    padding: 10px 10px;
+    background-color: gold;
+    top: 50px;
+    border-radius: 3%;
+}
+.button:hover{
+    transform: translateY(-20%);
+    transition: 0.5s;
+}
+
+.homeContainer .content .image {
+    position: relative;
+    max-width: 40%;
+    height: fit-content;
+    top: 120px;
+}
+.image:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+}
+
+.circle{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: gold;
+    clip-path: circle(300px at right 100px);
+}
+
+.quizContainer{
+    height: fit-content;
+    width: 100%;
+    background-color: #ffd700;
+    margin-top: -20%;
+    padding-top: 20%;
+    margin-bottom: -20%;
+    padding-bottom: 15%;
+    justify-content: center;
+    display: flex;
+}
+
+.quizContainer .content{
+    display: flex;
+    height: fit-content;
+    max-width: 100%;
+    padding: 0 100px;
+    justify-content: space-between;
+    padding-bottom: 8%;
+}
+
+.quizContainer .content .image{
+    position: relative;
+    height: fit-content;
+    top: 60px;
+}
+
+.quizContainer .content .textBox{
+    position: relative;
+    max-width: 50%;
+    height: fit-content;
+    top: 10px;
+}
+
+
+.quizContainer .content .textBox .body p{
+    color: black;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+.quizContainer .content .textBox .tittle{
+    padding-bottom: 30px;
+}
+
+.quizContainer .content .textBox .tittle h2{
+    font-size: 2.1em;
+    color: black;
+    font-weight: 900;
+}
+
+/* .quizContainer .content .image:hover{
+    transform: scale(1.05);
+    transition: 0.5s;
+} */
+
+.quizContainer .content .textBox .button a{
+    position: relative;
+    text-decoration: none;
+    color: #ffd700;
+    padding: 11px 11px;
+    background-color: black;
+    top: 50px;
+    border-radius: 3%;
+}
+
+footer{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+footer .main{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 100px;
+    align-items: center;
+    margin-top: -100px;
+}
+
+footer .main .contact{
+    text-align: center;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .main .contact .way{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9em;
+}
+
+footer .separator{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+}
+
+footer .separator .sep {
+    height: 2px;
+    width:90%;
+    background-color: gold;
+}
+
+footer .copyright {
+    color: white;
+    margin: 1% 7%;
+    font-size: 0.9em;
+}
