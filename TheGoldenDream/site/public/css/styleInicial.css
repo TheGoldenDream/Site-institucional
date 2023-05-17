@@ -121,6 +121,7 @@ header ul li #Sign_In{
     font-size: 1.05em;
     color: white;
     font-weight: 100;
+    text-align: justify;
 }
 .homeContainer .content .textBox .body span{
     color: #ffd700;
@@ -200,6 +201,7 @@ header ul li #Sign_In{
     color: black;
     font-size: 1em;
     font-weight: 600;
+    text-align: justify;
 }
 
 .quizContainer .content .textBox .tittle{

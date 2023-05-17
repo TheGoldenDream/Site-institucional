@@ -14,16 +14,16 @@
 
 <header>
     <div class="logo">
-        <a href="./Inicial.html" class="image">
+        <a href="./index.html" class="image">
             <img src="./assets/img/logo.png" style="max-width: 100px;">
         </a>
     </div>
     <ul>
-        <li><a href="./Inicial.html">Home</a></li>
+        <li><a href="./index.html">Home</a></li>
         <li><a href="#">História</a></li>
         <li><a href="#">Quiz</a></li>
         <li><a href="#">Contato</a></li>
-        <li><a href="./Login.html" id="Sign_In">Entrar</a>
+        <li><a href="./login.html" id="Sign_In">Entrar</a>
         <li><a href="#" id="Sign_In">Cadastrar-se</a></li>
 
     </ul>
@@ -48,6 +48,65 @@
             <span>Senha</span>
             <input id="inp_senha" type="password" placeholder="********">
         </div>
-        <button>Cadastrar-se!</button>
+        <div class="campo">
+            <span>Confirme sua senha</span>
+            <input id="inp_confirmacaoSenha" type="password" placeholder="********">
+        </div>
+        <button onclick="cadastrar()">Cadastrar-se!</button>
     </div>
 </section>
+
+<script>
+    function cadastrar() {
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var userNameVar = inp_user.value;
+        var emailUserVar = inp_email.value;
+        var celularUserVar = inp_celular.value;
+        var senhaUserVar = inp_senha.value;
+        var confirmacaoSenhaVar = inp_confirmacaoSenha.value;
+
+        if (userNameVar == "" || emailUserVar == "" || celularUserVar == "" || senhaUserVar == "" || confirmacaoSenhaVar == "") {
+            alert("Parece que há campos em branco")
+
+            return false;
+        }
+        
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                userNameServer: userNameVar,
+                emailUserServer: emailUserVar,
+                celularUserServer: celularUserVar,
+                senhaUserServer: senhaUserVar
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                alert('Cadastro realizado com sucesso, direcionando para pagina de login')
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+
+        });
+
+        return false;
+    }
+
+</script>

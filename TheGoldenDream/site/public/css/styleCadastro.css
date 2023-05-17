@@ -91,7 +91,7 @@ header ul li #Sign_In{
 
 .cadastro .cardCadastro{
     position: relative;
-    top: 5%;
+    top: 7%;
     background-color: gold;
     display: flex;
     flex-direction: column;
@@ -108,7 +108,7 @@ header ul li #Sign_In{
 }
 
 .cadastro .cardCadastro{
-    height: 65%;
+    height: 75%;
     width: 30%;
     border: 3px rgb(49, 49, 49) solid;
     border-radius: 15px;
