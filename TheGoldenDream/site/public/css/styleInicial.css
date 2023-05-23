@@ -121,7 +121,6 @@ header ul li #Sign_In{
     font-size: 1.05em;
     color: white;
     font-weight: 100;
-    text-align: justify;
 }
 .homeContainer .content .textBox .body span{
     color: #ffd700;
@@ -134,7 +133,7 @@ header ul li #Sign_In{
     padding: 10px 10px;
     background-color: gold;
     top: 50px;
-    border-radius: 3%;
+    border-radius: 5px;
 }
 .button:hover{
     transform: translateY(-20%);
@@ -201,7 +200,6 @@ header ul li #Sign_In{
     color: black;
     font-size: 1em;
     font-weight: 600;
-    text-align: justify;
 }
 
 .quizContainer .content .textBox .tittle{
@@ -226,7 +224,7 @@ header ul li #Sign_In{
     padding: 11px 11px;
     background-color: black;
     top: 50px;
-    border-radius: 3%;
+    border-radius: 5px;
 }
 
 footer{

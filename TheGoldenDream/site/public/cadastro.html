@@ -1,63 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cadastro || The Golden Dream</title>
     <link rel="stylesheet" href="./css/styleCadastro.css">
-</head>
-<body>
     
+
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <a href="./index.html" class="image">
+                <img src="./assets/img/logo.png" style="max-width: 100px;">
+            </a>
+        </div>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">História</a></li>
+            <li><a href="#">Quiz</a></li>
+            <li><a href="#">Records</a></li>
+            <li><a href="./galeria.html">Galeria</a></li>
+            <li><a href="./login.html" id="Sign_In">Entrar</a>
+            <li><a href="#" id="Sign_In">Cadastrar-se</a></li>
+
+        </ul>
+    </header>
+    <section class="cadastro">
+        <div class="cardCadastro">
+            <h2>Bem-Vindo!</h2>
+
+            <div class="campo">
+                <span>Nome de usuário:</span>
+                <input id="inp_user" type="text" placeholder="Seu Usuário">
+            </div>
+            <div class="campo">
+                <span>E-mail:</span>
+                <input id="inp_email" type="text" placeholder="seuemail@provedor.com">
+            </div>
+            <div class="campo">
+                <span>Celular:</span>
+                <input id="inp_celular" type="text" placeholder="(xx)xxxxx-xxxx">
+            </div>
+            <div class="campo">
+                <span>Senha</span>
+                <input id="inp_senha" type="password" placeholder="********">
+            </div>
+            <div class="campo">
+                <span>Confirme sua senha</span>
+                <input id="inp_confirmacaoSenha" type="password" placeholder="********">
+            </div>
+            <button onclick="cadastrar()">Cadastrar-se!</button>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
+
 </html>
 
-<header>
-    <div class="logo">
-        <a href="./index.html" class="image">
-            <img src="./assets/img/logo.png" style="max-width: 100px;">
-        </a>
-    </div>
-    <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="#">História</a></li>
-        <li><a href="#">Quiz</a></li>
-        <li><a href="#">Contato</a></li>
-        <li><a href="./login.html" id="Sign_In">Entrar</a>
-        <li><a href="#" id="Sign_In">Cadastrar-se</a></li>
-
-    </ul>
-</header>
-<section class="cadastro">
-    <div class="cardCadastro">
-        <h2>Bem-Vindo!</h2>
-
-        <div class="campo">
-            <span>Nome de usuário:</span>
-            <input id="inp_user" type="text" placeholder="Seu Usuário">
-        </div>
-        <div class="campo">
-            <span>E-mail:</span>
-            <input id="inp_email" type="text" placeholder="seuemail@provedor.com">
-        </div>
-        <div class="campo">
-            <span>Celular:</span>
-            <input id="inp_celular" type="text" placeholder="(xx)xxxxx-xxxx">
-        </div>
-        <div class="campo">
-            <span>Senha</span>
-            <input id="inp_senha" type="password" placeholder="********">
-        </div>
-        <div class="campo">
-            <span>Confirme sua senha</span>
-            <input id="inp_confirmacaoSenha" type="password" placeholder="********">
-        </div>
-        <button onclick="cadastrar()">Cadastrar-se!</button>
-    </div>
-</section>
-
 <script>
+
+    $('#inp_celular').mask('(00)00000-0000');
+
+
+
     function cadastrar() {
+
 
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
@@ -67,12 +83,59 @@
         var senhaUserVar = inp_senha.value;
         var confirmacaoSenhaVar = inp_confirmacaoSenha.value;
 
-        if (userNameVar == "" || emailUserVar == "" || celularUserVar == "" || senhaUserVar == "" || confirmacaoSenhaVar == "") {
-            alert("Parece que há campos em branco")
 
-            return false;
+        if (inp_email.value.indexOf('@') < 0 || inp_email.value.length < 7) {
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Erro',
+                text: 'Email Inválido!',
+                showConfirmButton: true,
+            })
+            return false
         }
-        
+        else if (userNameVar.length < 4) {
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Erro',
+                text: 'Nome de usuário curto demais!',
+                showConfirmButton: true,
+            })
+            return false
+        }
+        else if (celularUserVar.length < 14) {
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Erro',
+                text: 'Numero de celular inválido!',
+                showConfirmButton: true,
+            })
+            return false
+        }
+        else if (senhaUserVar.length < 6) {
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Erro',
+                text: 'Insira uma senha com pelo menos 6 caracteres!',
+                showConfirmButton: true,
+            })
+            return false
+        }
+        else if (senhaUserVar != confirmacaoSenhaVar) {
+            Swal.fire({
+                position: 'center-center',
+                icon: 'error',
+                title: 'Erro',
+                text: 'As senhas não correspondem!',
+                showConfirmButton: true,
+            })
+            return false
+        }
+
+
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
             method: "POST",
@@ -92,14 +155,27 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                alert('Cadastro realizado com sucesso, direcionando para pagina de login')
+                Swal.fire({
+                    position: 'center-center',
+                    icon: 'success',
+                    title: 'Sucesso!',
+                    text: 'Indo para página de login!',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
 
                 setTimeout(() => {
                     window.location = "login.html";
-                }, "2000")
+                }, "1500")
 
             } else {
-                throw ("Houve um erro ao tentar realizar o cadastro!");
+                Swal.fire({
+                    position: 'center-center',
+                    icon: 'error',
+                    title: 'Erro',
+                    text: 'nome de usuario, email ou celular já cadastrados!',
+                    showConfirmButton: true
+                })
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);

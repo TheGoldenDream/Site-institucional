@@ -1,48 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login || The Golden Dream</title>
     <link rel="stylesheet" href="./css/styleLogin.css">
 </head>
+
 <body>
-    
+
+    <header>
+        <div class="logo">
+            <a href="./index.html" class="image">
+                <img src="./assets/img/logo.png" style="max-width: 100px;">
+            </a>
+        </div>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">História</a></li>
+            <li><a href="#">Records</a></li>
+            <li><a href="#">Quiz</a></li>
+            <li><a href="./galeria.html">Galeria</a></li>
+            <li><a href="#" id="Sign_In">Entrar</a>
+            <li><a href="./cadastro.html" id="Sign_In">Cadastrar-se</a></li>
+
+        </ul>
+    </header>
+    <section class="cadastro">
+        <div class="cardCadastro">
+            <h2>Bem-Vindo de Volta!</h2>
+
+            <div class="campo">
+                <span>Nome de usuário:</span>
+                <input id="inp_user" type="text" placeholder="Seu Usuário">
+            </div>
+            <div class="campo">
+                <span>Senha:</span>
+                <input id="inp_senha" type="password" placeholder="********">
+            </div>
+            <button onclick="entrar()">Entrar!</button>
+        </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
+
 </html>
 
-<header>
-    <div class="logo">
-        <a href="./index.html" class="image">
-            <img src="./assets/img/logo.png" style="max-width: 100px;">
-        </a>
-    </div>
-    <ul>
-        <li><a href="./index.html">Home</a></li>
-        <li><a href="#">História</a></li>
-        <li><a href="#">Quiz</a></li>
-        <li><a href="#">Contato</a></li>
-        <li><a href="#" id="Sign_In">Entrar</a>
-        <li><a href="./cadastro.html" id="Sign_In">Cadastrar-se</a></li>
 
-    </ul>
-</header>
-<section class="cadastro">
-    <div class="cardCadastro">
-        <h2>Bem-Vindo de Volta!</h2>
-
-        <div class="campo">
-            <span>Nome de usuário:</span>
-            <input id="inp_user" type="text" placeholder="Seu Usuário">
-        </div>
-        <div class="campo">
-            <span>Senha:</span>
-            <input id="inp_senha" type="password" placeholder="********">
-        </div>
-        <button onclick="entrar()">Entrar!</button>
-    </div>
-</section>
 
 <script>
 
@@ -53,7 +60,7 @@
         var senhaUserVar = inp_senha.value;
 
         if (emailUserVar == "" || senhaUserVar == "") {
-            
+
             alert('Parece que há campos em branco')
 
             return false;
@@ -85,13 +92,31 @@
                     sessionStorage.NOME_USUARIO = json.UserName;
                     sessionStorage.ID_USUARIO = json.idUser;
 
-                    setTimeout(function () {
-                        window.location = "./a.html";
-                    }, 1000); // apenas para exibir o loading
+                    Swal.fire({
+                        position: 'center-center',
+                        icon: 'success',
+                        title: 'Sucesso!',
+                        text: 'Entrando no site...!',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+
+                    setTimeout(() => {
+                        window.location = "a.html";
+                    }, "1500") // apenas para exibir o loading
 
                 });
 
             } else {
+
+                Swal.fire({
+                    position: 'center-center',
+                    icon: 'error',
+                    title: 'Erro!',
+                    text: 'Usuário ou senha inválidos!',
+                    showConfirmButton: true,
+                    timer: 1500
+                })
 
                 console.log("Houve um erro ao tentar realizar o login!");
 
