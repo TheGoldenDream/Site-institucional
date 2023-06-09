@@ -27,34 +27,120 @@
 
         </ul>
     </header>
-    <section class="copa1930">
-        <div class="content">
-            <div class="text">
-                <p>A Copa do Mundo de 1930 foi a primeira edição do torneio e foi sediada no Uruguai. A competição foi organizada em comemoração ao centenário da independência uruguaia e teve a participação de 13 seleções de diferentes partes do mundo. <br><br>
-
-                    O torneio foi disputado entre os dias 13 e 30 de julho de 1930. As partidas foram realizadas em três estádios em Montevidéu: Estádio Centenário, Parque Central e Estádio Pocitos. O formato do torneio consistiu em eliminatórias diretas, com as equipes divididas em quatro grupos. Os vencedores de cada grupo avançaram para as semifinais e, posteriormente, para a final.
-                    <br><br>
-                    Um dos principais destaques da Copa do Mundo de 1930 foi Guillermo Stábile, jogador argentino. Ele foi o artilheiro da competição, marcando um total de 8 gols em apenas 4 jogos disputados. Stábile teve atuações brilhantes e foi fundamental para a campanha argentina.
-                    <br><br>
-                    Outro jogador notável foi Pedro Cea, do Uruguai. Ele marcou um total de 5 gols no torneio e foi fundamental para a conquista do título pela seleção uruguaia. Cea foi uma peça importante no ataque uruguaio e contribuiu significativamente para o sucesso da equipe.
-                    <br><br>
-                    Héctor Castro, também do Uruguai, foi outro destaque da Copa do Mundo de 1930. Ele marcou dois gols na final contra a Argentina e foi um jogador influente durante todo o torneio. Castro demonstrou grande habilidade e determinação em campo, tornando-se um herói nacional.
-                    <br><br>
-                    Além dos artilheiros mencionados, outros jogadores também se destacaram na competição. O uruguaio Ángel Romano marcou 3 gols e teve atuações destacadas nas fases eliminatórias. Adolfo Zumelzú, da Argentina, foi outro jogador importante, contribuindo com gols e liderança em campo.
-                    <br><br>
-                    A final da Copa do Mundo de 1930 foi disputada em 30 de julho, no Estádio Centenário, entre Uruguai e Argentina. O Uruguai venceu por 4 a 2 e conquistou o título. A partida foi emocionante e marcou um momento histórico para o futebol uruguaio, estabelecendo o país como uma potência no esporte.
-                    <br><br>
-                    A Copa do Mundo de 1930 foi uma competição pioneira que estabeleceu as bases para o maior evento esportivo do futebol. Apesar de alguns problemas organizacionais e de infraestrutura, a competição foi um sucesso e deixou um legado duradouro no esporte.
-                    
-                    
-                    
-                    
-                    
-                </p>
-            </div>
-            <div class="image"></div>
-        </div>
-    </section>
+    <div class="content">
+        <aside>
+            <h2>
+                Selecione uma copa!
+            </h2>
+            <select name="" id="slct_copa" onclick="trocarCopa()">
+                <option id="a">Escolha uma opção</option>
+                <option value="1930">Copa do mundo de 1930</option>
+                <option value="1934">Copa do mundo de 1934</option>
+                <option value="1938">Copa do mundo de 1938</option>
+                <option value="1950">Copa do mundo de 1950</option>
+                <option value="1954">Copa do mundo de 1954</option>
+                <option value="1958">Copa do mundo de 1958</option>
+                <option value="1962">Copa do mundo de 1962</option>
+                <option value="1966">Copa do mundo de 1966</option>
+                <option value="1970">Copa do mundo de 1970</option>
+                <option value="1974">Copa do mundo de 1974</option>
+                <option value="1978">Copa do mundo de 1978</option>
+                <option value="1982">Copa do mundo de 1982</option>
+                <option value="1986">Copa do mundo de 1986</option>
+                <option value="1990">Copa do mundo de 1990</option>
+                <option value="1994">Copa do mundo de 1994</option>
+                <option value="1998">Copa do mundo de 1998</option>
+                <option value="2002">Copa do mundo de 2002</option>
+                <option value="2006">Copa do mundo de 2006</option>
+                <option value="2010">Copa do mundo de 2010</option>
+                <option value="2014">Copa do mundo de 2014</option>
+                <option value="2018">Copa do mundo de 2018</option>
+                <option value="2022">Copa do mundo de 2022</option>
+            </select>
+        </aside>
+        <article class="history">
+            <h2 class="title" id="title">
+                Escolha uma copa do mundo no menu à esquerda para saber tudo sobre ela!
+            </h2>
+            <p class="body" id="body"></p>
+        </article>
+    </div>
 </body>
 
 </html>
+<script>
+    function trocarCopa() {
+        var copa = slct_copa.value
+        if (copa == '1930') {
+            title.innerHTML = `Copa do mundo de ${copa}`
+            body.innerHTML = `A Copa do Mundo de 1930 foi a primeira edição do torneio internacional de futebol organizado pela FIFA. A competição foi sediada no Uruguai, entre os dias 13 e 30 de julho de 1930. Participaram 13 equipes de todo o mundo, sendo sete da América do Sul, quatro da Europa e duas da América do Norte.
+            <br><br>
+            O Uruguai foi escolhido como país-sede para comemorar o centenário de sua independência e por sua dominância no futebol sul-americano na época. As partidas foram disputadas em três estádios na cidade de Montevidéu: o Estádio Gran Parque Central, o Estádio Pocitos e o Estádio Centenário, este último construído especialmente para a Copa.
+            <br><br>
+            O torneio foi disputado em um formato de mata-mata, com as equipes jogando eliminatórias diretas. A seleção uruguaia, que era considerada uma das favoritas, enfrentou o Peru na semifinal e venceu por 6 a 1. Na outra semifinal, a Argentina derrotou os Estados Unidos por 6 a 1.
+            <br><br>
+            A final foi disputada em 30 de julho de 1930, entre Uruguai e Argentina, no Estádio Centenário. A partida terminou em 4 a 2 para o Uruguai, que conquistou o título mundial. Isso marcou o início de uma grande rivalidade entre as seleções do Uruguai e da Argentina.
+            <br><br>
+            O artilheiro da Copa do Mundo de 1930 foi Guillermo Stábile, da Argentina, que marcou um total de 8 gols ao longo do torneio. A competição também foi marcada por algumas curiosidades, como o fato de não haver disputa de terceiro lugar e o uso de bolas de futebol diferentes em cada tempo dos jogos.
+            <br><br>
+            A Copa do Mundo de 1930 foi considerada um marco importante na história do futebol. Ela estabeleceu as bases para o torneio mais prestigioso do futebol mundial e ajudou a popularizar o esporte em todo o mundo. Desde então, a Copa do Mundo tornou-se um evento de grande relevância, reunindo as melhores seleções do mundo a cada quatro anos.`
+        } else if (copa == '1934') {
+            title.innerHTML = `Copa do mundo de ${copa}`
+            body.innerHTML = `A Copa do Mundo de 1934 foi a segunda edição do torneio internacional de futebol organizado pela FIFA. O campeonato foi realizado na Itália, entre os dias 27 de maio e 10 de junho de 1934. Participaram 16 equipes de diferentes partes do mundo, sendo 12 da Europa, 2 da América do Sul, 1 da América do Norte e 1 da África.
+            <br><br>
+            A escolha da Itália como país-sede gerou certa polêmica, pois a FIFA havia designado originalmente o torneio para a então campeã Uruguai. No entanto, a federação uruguaia não aceitou pagar as despesas de viagem das equipes europeias e, como resposta, os países europeus decidiram boicotar a Copa do Mundo de 1930. Por esse motivo, a Itália foi escolhida como nova sede, já que a FIGC (Federação Italiana de Futebol) estava disposta a cobrir as despesas de viagem das equipes europeias.
+            <br><br>
+            A Copa do Mundo de 1934 foi a primeira a adotar um formato de eliminatórias, com oito grupos compostos por quatro equipes cada. Os vencedores de cada grupo avançaram para as quartas de final, disputadas em jogos eliminatórios diretos até a grande final. Além disso, foi a primeira Copa a contar com a prorrogação em caso de empate no tempo regulamentar.
+            <br><br>
+            A seleção italiana, liderada pelo técnico Vittorio Pozzo, conquistou o título ao derrotar a Tchecoslováquia por 2 a 1 na prorrogação da final. Os gols da Itália foram marcados por Raimundo Orsi e Angelo Schiavio. O artilheiro da competição foi Oldřich Nejedlý, da Tchecoslováquia, com 5 gols.
+            <br><br>
+            A Copa do Mundo de 1934 também foi marcada por algumas controvérsias. Houve relatos de que alguns jogadores da seleção italiana receberam ameaças e intimidações antes da final contra a Tchecoslováquia, o que gerou suspeitas de interferência política no torneio.
+            <br><br>
+            Além disso, a seleção austríaca, uma das favoritas ao título, teve problemas em seu jogo das quartas de final contra a Itália. O árbitro do jogo era sueco e foi acusado de favorecer a equipe italiana, prejudicando a Áustria. Esses incidentes levantaram questionamentos sobre a imparcialidade dos árbitros e a influência política na competição.
+            <br><br>
+            Apesar das polêmicas, a Copa do Mundo de 1934 teve um papel importante na consolidação do torneio como um evento esportivo de destaque mundial. O sucesso da competição na Itália contribuiu para o crescimento do futebol e para o desenvolvimento do campeonato nos anos seguintes.`
+        } else if (copa == '1938') {
+            text.innerHTML = ``
+        } else if (copa == '1950') {
+            text.innerHTML = ``
+        } else if (copa == '1954') {
+            text.innerHTML = ``
+        } else if (copa == '1958') {
+            text.innerHTML = ``
+        } else if (copa == '1962') {
+            text.innerHTML = ``
+        } else if (copa == '1966') {
+            text.innerHTML = ``
+        } else if (copa == '1970') {
+            text.innerHTML = ``
+        } else if (copa == '1970') {
+            text.innerHTML = ``
+        } else if (copa == '1974') {
+            text.innerHTML = ``
+        } else if (copa == '1978') {
+            text.innerHTML = ``
+        } else if (copa == '1982') {
+            text.innerHTML = ``
+        } else if (copa == '1986') {
+            text.innerHTML = ``
+        } else if (copa == '1990') {
+            text.innerHTML = ``
+        } else if (copa == '1994') {
+            text.innerHTML = ``
+        } else if (copa == '1998') {
+            text.innerHTML = ``
+        } else if (copa == '2002') {
+            text.innerHTML = ``
+        } else if (copa == '2006') {
+            text.innerHTML = ``
+        } else if (copa == '2010') {
+            text.innerHTML = ``
+        } else if (copa == '2014') {
+            text.innerHTML = ``
+        } else if (copa == '2018') {
+            text.innerHTML = ``
+        } else if (copa == '2022') {
+            text.innerHTML = ``
+        }
+    }
+</script>
