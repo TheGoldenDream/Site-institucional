@@ -17,11 +17,11 @@
             </a>
         </div>
         <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="#">História</a></li>
             <li><a href="#">Records</a></li>
             <li><a href="#">Quiz</a></li>
-            <li><a href="#">Records</a></li>
+            <li><a href="./galeria.html">Galeria</a></li>
             <li><a href="./login.html" id="Sign_In">Entrar</a>
             <li><a href="./cadastro.html" id="Sign_In">Cadastrar-se</a></li>
 
@@ -34,31 +34,31 @@
             </h2>
             <select name="" id="slct_copa" onclick="trocarCopa()">
                 <option id="a">Escolha uma opção</option>
-                <option value="1930">Copa do mundo de 1930</option>
-                <option value="1934">Copa do mundo de 1934</option>
-                <option value="1938">Copa do mundo de 1938</option>
-                <option value="1950">Copa do mundo de 1950</option>
-                <option value="1954">Copa do mundo de 1954</option>
-                <option value="1958">Copa do mundo de 1958</option>
-                <option value="1962">Copa do mundo de 1962</option>
-                <option value="1966">Copa do mundo de 1966</option>
-                <option value="1970">Copa do mundo de 1970</option>
-                <option value="1974">Copa do mundo de 1974</option>
-                <option value="1978">Copa do mundo de 1978</option>
-                <option value="1982">Copa do mundo de 1982</option>
-                <option value="1986">Copa do mundo de 1986</option>
-                <option value="1990">Copa do mundo de 1990</option>
-                <option value="1994">Copa do mundo de 1994</option>
-                <option value="1998">Copa do mundo de 1998</option>
-                <option value="2002">Copa do mundo de 2002</option>
-                <option value="2006">Copa do mundo de 2006</option>
-                <option value="2010">Copa do mundo de 2010</option>
-                <option value="2014">Copa do mundo de 2014</option>
-                <option value="2018">Copa do mundo de 2018</option>
-                <option value="2022">Copa do mundo de 2022</option>
+                <option value="0">Copa do mundo de 1930</option>
+                <option value="1">Copa do mundo de 1934</option>
+                <option value="2">Copa do mundo de 1938</option>
+                <option value="3">Copa do mundo de 1950</option>
+                <option value="4">Copa do mundo de 1954</option>
+                <option value="5">Copa do mundo de 1958</option>
+                <option value="6">Copa do mundo de 1962</option>
+                <option value="7">Copa do mundo de 1966</option>
+                <option value="8">Copa do mundo de 1970</option>
+                <option value="9">Copa do mundo de 1974</option>
+                <option value="10">Copa do mundo de 1978</option>
+                <option value="11">Copa do mundo de 1982</option>
+                <option value="12">Copa do mundo de 1986</option>
+                <option value="13">Copa do mundo de 1990</option>
+                <option value="14">Copa do mundo de 1994</option>
+                <option value="15">Copa do mundo de 1998</option>
+                <option value="16">Copa do mundo de 2002</option>
+                <option value="17">Copa do mundo de 2006</option>
+                <option value="18">Copa do mundo de 2010</option>
+                <option value="19">Copa do mundo de 2014</option>
+                <option value="20">Copa do mundo de 2018</option>
+                <option value="21">Copa do mundo de 2022</option>
             </select>
         </aside>
-        <article class="history">
+        <article id="historia">
             <h2 class="title" id="title">
                 Escolha uma copa do mundo no menu à esquerda para saber tudo sobre ela!
             </h2>
@@ -69,11 +69,35 @@
 
 </html>
 <script>
-    function trocarCopa() {
-        var copa = slct_copa.value
-        if (copa == '1930') {
-            title.innerHTML = `Copa do mundo de ${copa}`
-            body.innerHTML = `A Copa do Mundo de 1930 foi a primeira edição do torneio internacional de futebol organizado pela FIFA. A competição foi sediada no Uruguai, entre os dias 13 e 30 de julho de 1930. Participaram 13 equipes de todo o mundo, sendo sete da América do Sul, quatro da Europa e duas da América do Norte.
+
+
+    var copas = [
+        1930,
+        1934,
+        1938,
+        1950,
+        1954,
+        1958,
+        1962,
+        1966,
+        1970,
+        1974,
+        1978,
+        1982,
+        1986,
+        1990,
+        1994,
+        1998,
+        2002,
+        2006,
+        2010,
+        2014,
+        2018,
+        2022
+    ]
+    var historias_copas = [
+        
+            `A Copa do Mundo de 1930 foi a primeira edição do torneio internacional de futebol organizado pela FIFA. A competição foi sediada no Uruguai, entre os dias 13 e 30 de julho de 1930. Participaram 13 equipes de todo o mundo, sendo sete da América do Sul, quatro da Europa e duas da América do Norte.
             <br><br>
             O Uruguai foi escolhido como país-sede para comemorar o centenário de sua independência e por sua dominância no futebol sul-americano na época. As partidas foram disputadas em três estádios na cidade de Montevidéu: o Estádio Gran Parque Central, o Estádio Pocitos e o Estádio Centenário, este último construído especialmente para a Copa.
             <br><br>
@@ -83,10 +107,17 @@
             <br><br>
             O artilheiro da Copa do Mundo de 1930 foi Guillermo Stábile, da Argentina, que marcou um total de 8 gols ao longo do torneio. A competição também foi marcada por algumas curiosidades, como o fato de não haver disputa de terceiro lugar e o uso de bolas de futebol diferentes em cada tempo dos jogos.
             <br><br>
-            A Copa do Mundo de 1930 foi considerada um marco importante na história do futebol. Ela estabeleceu as bases para o torneio mais prestigioso do futebol mundial e ajudou a popularizar o esporte em todo o mundo. Desde então, a Copa do Mundo tornou-se um evento de grande relevância, reunindo as melhores seleções do mundo a cada quatro anos.`
-        } else if (copa == '1934') {
-            title.innerHTML = `Copa do mundo de ${copa}`
-            body.innerHTML = `A Copa do Mundo de 1934 foi a segunda edição do torneio internacional de futebol organizado pela FIFA. O campeonato foi realizado na Itália, entre os dias 27 de maio e 10 de junho de 1934. Participaram 16 equipes de diferentes partes do mundo, sendo 12 da Europa, 2 da América do Sul, 1 da América do Norte e 1 da África.
+            A Copa do Mundo de 1930 foi considerada um marco importante na história do futebol. Ela estabeleceu as bases para o torneio mais prestigioso do futebol mundial e ajudou a popularizar o esporte em todo o mundo. Desde então, a Copa do Mundo tornou-se um evento de grande relevância, reunindo as melhores seleções do mundo a cada quatro anos.` //1930
+            ,
+            
+
+
+
+
+
+
+
+            `A Copa do Mundo de 1934 foi a segunda edição do torneio internacional de futebol organizado pela FIFA. O campeonato foi realizado na Itália, entre os dias 27 de maio e 10 de junho de 1934. Participaram 16 equipes de diferentes partes do mundo, sendo 12 da Europa, 2 da América do Sul, 1 da América do Norte e 1 da África.
             <br><br>
             A escolha da Itália como país-sede gerou certa polêmica, pois a FIFA havia designado originalmente o torneio para a então campeã Uruguai. No entanto, a federação uruguaia não aceitou pagar as despesas de viagem das equipes europeias e, como resposta, os países europeus decidiram boicotar a Copa do Mundo de 1930. Por esse motivo, a Itália foi escolhida como nova sede, já que a FIGC (Federação Italiana de Futebol) estava disposta a cobrir as despesas de viagem das equipes europeias.
             <br><br>
@@ -98,49 +129,739 @@
             <br><br>
             Além disso, a seleção austríaca, uma das favoritas ao título, teve problemas em seu jogo das quartas de final contra a Itália. O árbitro do jogo era sueco e foi acusado de favorecer a equipe italiana, prejudicando a Áustria. Esses incidentes levantaram questionamentos sobre a imparcialidade dos árbitros e a influência política na competição.
             <br><br>
-            Apesar das polêmicas, a Copa do Mundo de 1934 teve um papel importante na consolidação do torneio como um evento esportivo de destaque mundial. O sucesso da competição na Itália contribuiu para o crescimento do futebol e para o desenvolvimento do campeonato nos anos seguintes.`
-        } else if (copa == '1938') {
-            text.innerHTML = ``
-        } else if (copa == '1950') {
-            text.innerHTML = ``
-        } else if (copa == '1954') {
-            text.innerHTML = ``
-        } else if (copa == '1958') {
-            text.innerHTML = ``
-        } else if (copa == '1962') {
-            text.innerHTML = ``
-        } else if (copa == '1966') {
-            text.innerHTML = ``
-        } else if (copa == '1970') {
-            text.innerHTML = ``
-        } else if (copa == '1970') {
-            text.innerHTML = ``
-        } else if (copa == '1974') {
-            text.innerHTML = ``
-        } else if (copa == '1978') {
-            text.innerHTML = ``
-        } else if (copa == '1982') {
-            text.innerHTML = ``
-        } else if (copa == '1986') {
-            text.innerHTML = ``
-        } else if (copa == '1990') {
-            text.innerHTML = ``
-        } else if (copa == '1994') {
-            text.innerHTML = ``
-        } else if (copa == '1998') {
-            text.innerHTML = ``
-        } else if (copa == '2002') {
-            text.innerHTML = ``
-        } else if (copa == '2006') {
-            text.innerHTML = ``
-        } else if (copa == '2010') {
-            text.innerHTML = ``
-        } else if (copa == '2014') {
-            text.innerHTML = ``
-        } else if (copa == '2018') {
-            text.innerHTML = ``
-        } else if (copa == '2022') {
-            text.innerHTML = ``
+            Apesar das polêmicas, a Copa do Mundo de 1934 teve um papel importante na consolidação do torneio como um evento esportivo de destaque mundial. O sucesso da competição na Itália contribuiu para o crescimento do futebol e para o desenvolvimento do campeonato nos anos seguintes.`//1934
+            ,
+        
+
+
+
+
+
+
+
+            `Três países se candidataram para ser a sede da Copa: Alemanha, Argentina e França; A Alemanha, que organizava os Jogos Olímpicos de Verão de 1936, tinha interesse por mais um evento para propaganda do nazismo de Adolf Hitler. A Argentina esperava sua vez por um possível rodízio de continentes. Os dois eram os favoritos. Mas, em agosto de 1936, em Berlim, durante as Olimpíadas de 1936, o Congresso da FIFA se reuniu e decidiu, como homenagem a Jules Rimet, já com 64 anos, e a Henri Delaunay, outro dirigente da entidade, fazer a Copa na França, a terceira candidata. A decisão causou afronta na América do Sul, que acreditava que as sedes seriam alternadas entre os dois continentes; em vez disso, foi o segundo torneio consecutivo a ser jogado na Europa. Em razão disso, todas as seleções americanas (exceto Brasil e Cuba) boicotaram a Copa de 1938, em solidariedade a Argentina. Esta foi a última Copa do Mundo antes do início da Segunda Guerra Mundial.
+            <br><br>
+            A grande favorita para o título era a Seleção Italiana, então campeã mundial, campeã olímpica e mantinha a base que conquistara o título em 1934. A outra favorita era Alemanha, que havia anexado a Áustria e tinha passado a contar com boa parte dos talentosos jogadores do Wunderteam (com notória exceção do craque austríaco Matthias Sindelar, que não aceitou fazer parte da Seleção Nazista de Adolf Hitler), além da base que conquistara o terceiro lugar em 1934. Sindelar foi encontrado morto em sua casa um ano depois, segundo o laudo oficial (nazista), asfixiado por monóxido de carbono.
+            <br><br>
+
+            Alemanha, França, Itália, Tchecoslováquia, Hungria, Cuba e Brasil foram sorteadas como cabeças-de-chave em Paris, em 5 de março. Cinco das sete partidas da primeira rodada tiveram prorrogação; duas ainda foram para o jogo desempate. Em um jogo desempate, Cuba avançou para a fase seguinte à custas da Romênia. No outro jogo desempate, a Alemanha (que usava sua camisa com uma suástica no peito) liderava o placar por 1x0 no primeiro jogo quando a Suíça empatou, e no segundo jogo, a seleção germânica liderava por 2x0 (a comissão técnica chegara a mandar telegrama a Adolf Hitler contando sobre a vitória) quando sofreu a virada para 2x4. Esta derrota, que se deu em frente a uma torcida hostil que arremessava garrafas em Paris, foi colocada na conta do treinador alemão Sepp Herberger em uma atitude derrotista dos cinco jogadores austríacos que ele foi forçado a convocar; um jornalista alemão comentou mais tarde que "alemães e austríacos preferiam jogar um contra o outro até mesmo estando no mesmo time". A eliminação alemã foi uma grande surpresa, pois esta era considerada favorita para a conquista do título, ao lado da Itália. Esta foi a primeira vez em uma Copa do Mundo que a Alemanha não passou da primeira fase, uma vez que a seleção não participou das Copas de 1930 e 1950 - tal fato voltaria a acontecer só oitenta anos depois, na Copa do Mundo da Rússia em 2018. A então campeã Itália bateu a Noruega por 2 a 1, na prorrogação. O Brasil venceu a Polônia na prorrogação por 6 a 5, em um dos melhores jogos da história das copas. No primeiro tempo, prevaleceu a classe e o futebol refinado dos brasileiros e, ao final dos 45 minutos, o Brasil vencia por 3 a 1. Mas, no intervalo do jogo desabou um fortíssimo temporal que enlameou o gramado, dificultando o toque de bola dos brasileiros. Os poloneses se aproveitaram e o jogo terminou empatado em 4 a 4. Na prorrogação,o Brasil fez mais dois gols,vencendo a partida por 6 a 5. O craque brasileiro Leônidas da Silva fez 3 gols e o polonês Ernest Willimowski marcou 4 gols. Um dos gols de Leônidas foi marcado com o atacante descalço. Leônidas se preparava para trocar de chuteiras perto da área polonesa quando recebeu um presente do goleiro polonês, que escorregara ao tentar cobrar um tiro de meta. O atacante brasileiro completou para o gol de primeira, ainda com a chuteira na mão. A Tchecoslováquia venceu a Holanda na prorrogação por 3 a 0, e a Hungria goleou por 6 a 0 as Índias Orientais Holandesas (atual Indonésia).
+            <br><br>
+
+            A Suécia avançou diretamente às quartas-de-final como resultado da anexação da Áustria, e conseguiram derrotar Cuba por 8x0. A anfitriã França foi batida pela campeã Itália pelo placar de 3 a 1 (com os dois gols decisivos marcados por Silvio Piola, o melhor jogador italiano da competição) e a Suíça foi eliminada pela Hungria, pelo placar de 2 a 0. A Tchecoslováquia levou o Brasil ao jogo-desempate na partida conhecida como Batalha de Bordeaux, assim chamada devido a sua extrema violência, com 3 jogadores expulsos (Zezé Procópio e Martim Silveira do Brasil, e Jan Ríha da Tchecoslováquia) e cinco lesionados (os tchecos František Plánička e Oldřich Nejedlý tiveram que ser internados no hospital). Na partida-desempate; os sul-americanos se mostraram muito fortes para os esgotados tchecoslovacos e ganharam por 2x1. Esta foi a última partida a ser refeita em uma Copa do Mundo, com todos os vencedores destas partidas desempate caindo na fase seguinte.
+            <br><br>
+
+            A Hungria derrotou a Suécia em uma das semifinais por 5x1, enquanto Itália e Brasil se encontravam pela primeira vez em uma das rivalidades mais importantes da Copa do Mundo. O técnico brasileiro Ademar Pimenta resolveu descansar sua estrela Leônidas, confiante de que o Brasil iria se classificar para a final. Foi um grande erro. Após um primeiro tempo sem gols, Gino Colaussi abriu o placar para a Squadra Azzurra, aos seis minutos do segundo tempo. Em seguida, Giuseppe Meazza aumentava a vantagem com um pênalti cometido por Domingos da Guia. Romeu Pellicciari ainda descontou para o Brasil no finalzinho, mas não impediu a eliminação da seleção brasileira. O jogo Brasil X Itália causou muita polêmica e, até recentemente, foi objeto de análises e discussões. Há quem diga que o Brasil perdeu pelo cansaço dos jogos e viagens anteriores. Outros, lamentam a ausência de Tim e de Leônidas. Há também aqueles que garantem que o pênalti que deu origem ao segundo gol italiano não existiu.
+            <br><br>
+
+            O Brasil, comandado por Leônidas, garantiu o terceiro lugar vencendo, de virada, a Suécia por 4 a 2. 
+            <br><br>
+
+            A final teve lugar no Estádio Olímpico de Colombes, em Paris. Antes da final, Mussolini mandou o recado ao capitão Giuseppe Meazza (''Vitória ou Morte''). A Itália de Vittorio Pozzo abriu o placar cedo, aos 6 minutos, com Colaussi, mas a Hungria empatou em dois minutos, com Pál Titkos. Os italianos passaram a frente de novo logo em seguida, com gol de Silvio Piola e, no final do primeiro tempo, estava liderando por 3x1 no placar, de novo com Colaussi. Aos 25 minutos do segundo tempo, o melhor jogador húngaro, Gyorgy Sarósi, diminuiu para 3 X 2, ressuscitando as esperanças magiares. Mas, aos 40 minutos, Piola fez o gol do título italiano.Com o placar de 4x2 a favorecendo, a Squadra Azzurra se tornou a primeira seleção a conseguir defender seu título e tornou-se bicampeã da Copa do Mundo. O goleiro magiar Antal Szabó declarou: "Levei 4 gols, mas salvei a vida de 11 italianos'' (referência as ameaças de Benito Mussolini)
+            <br><br>
+
+            Foi a primeira Copa do Mundo transmitida pelo rádio para o Brasil. A Rádio Inconfidência, fundada dois anos antes, transmitiu os jogos ao vivo para a população de Minas Gerais.
+            <br><br>
+
+            Graças à Segunda Guerra Mundial, a Copa do Mundo não seria disputada por 12 anos, até 1950. Como resultado, a Itália ficou como campeã pelo recorde de 16 anos, de 1934 a 1950. O vice-presidente italiano da FIFA, Ottorino Barassi, escondeu o troféu em uma caixa de sapato sob sua cama durante a Segunda Grande Guerra, salvando-o assim de cair nas mãos das tropas de ocupação.`//1938
+            ,
+        
+
+
+
+
+
+
+
+
+
+
+            `A Copa do Mundo de 1950 foi realizada no Brasil e contou com a participação das seleções representantes dos seguintes países: Brasil Iugoslávia. Suíça, México, Espanha, Inglaterra, Chile, Estados Unidos, Suécia, Itália, Paraguai, Uruguai, Bolívia, Índia, Turquia e Escócia (os três últimos desistiram da competição). As cidades brasileiras que sediaram os jogos foram Belo Horizonte, Curitiba, São Paulo, Rio de Janeiro, Recife e Porto Alegre.
+            <br><br>
+            Esta foi a quarta Copa do Mundo realizada pela FIFA (Fédération Internationale de Football Association) e apresentou diversas novidades. Pela primeira vez uma seleção inglesa participava da competição, mas acabou sofrendo uma derrota listrada para a seleção amadora dos Estados Unidos. Houve também diversas goleadas históricas como os 8 X 0 do Uruguai em cima da Bolívia, os 7 X 0 do Brasil na Suécia e 6 X 1 na Espanha. Muitos craques foram revelados na Copa do Mundo de 1950, entre eles merecem destaque: Ademir de Menezes, Zizinho, Jair da Rosa Pinto, José Carlos Bauer, Obdulio Varela e Juan Alberto Schiaffino.
+            <br><br>
+
+            A escolha do Brasil para a disputa realizada em 1950 não foi por acaso. Naquela época, a Europa havia acabado de passar por duas Guerras Mundiais e estava em reconstrução. Com todos os países europeus sem condições, sem os recursos necessários para sediar uma Copa, a FIFA desistiu e optou pela realização da IV Copa do Mundo FIFA no Brasil. Com esta decisão, o governo brasileiro investiu na construção do estádio do Maracanã, que na época era considerado o maior do mundo.
+            <br><br>
+
+            A Copa do Mundo de 1950 teve uma fase final diferente das que vemos atualmente. Não houve quartas e nem oitavas de final, as quatro melhores equipes classificadas em seus grupos iniciais formaram um grupo final e disputaram entre si por pontos corridos. Na primeira rodada, ocorrida no dia 9 de julho, o Brasil goleou a Suécia por 7 X 1 e Espanha empatou em 2 X 2 com o Uruguai. Quatro dias depois era disputada  a segunda rodada. Desta vez, o Brasil goleou a Espanha por 6 X 1 e o Uruguai ganhou da Suécia por 3 X 2.
+            <br><br>
+
+            No fatídico dia 16 de julho de 1950 ocorria a última rodada da Copa do Mundo de 1950. O grupo principal encontrava-se com o Brasil com 4 pontos, o Uruguai com 3 pontos, a Suécia sem nenhum ponto e a Espanha com 1 ponto. Bastaria um empate contra o time o uruguaio e o Brasil seria o campeão do mundo.
+            <br><br>
+
+            Porém, por ironia do destino, este dia ficou conhecido na memória do país como um dos dias mais tristes para o futebol brasileiro. A última partida foi apelidada de Maracanaço, pois o estádio contava com cerca de 200 mil pessoas. Apesar do apoio do público, o Brasil perdeu por 2 X 1 para o Uruguai, jogando no lixo todo o favoritismo que havia conseguido com duas goleadas na fase final. O nome do algoz do Brasil foi Ghiggia, que desempatou a partida para a favor do Uruguai aos 79 minutos pondo fim ao sonho brasileiro.`//1950
+            ,
+
+
+
+
+
+
+
+
+        
+            `Pela primeira vez uma Copa teve cobertura pela televisão, e moedas comemorativas foram cunhadas por causa do evento. A partir dessa Copa, o Brasil passou a usar o uniforme com a camisa amarela e o calção azul. Depois da derrota no Mundial de 1950, o uniforme antigo (camisa branca e calção azul usado desde 1919) foi considerado uma das fontes de azar. Em 1953, o professor e jornalista gaúcho Aldyr Garcia Schlee venceu outros treze candidatos no concurso para escolha do novo uniforme. Como vencedor recebeu uma cadeira cativa no Maracanã, um estágio como desenhista no extinto jornal Correio da Manhã e uma soma em dinheiro.
+            <br><br>
+            Foi um mundial dominado amplamente pela fantástica equipe húngara, campeã olímpica de 52, composta de super craques como Ferenc Puskás, Nándor Hidegkuti, Sándor Kocsis, József Bozsik, Zoltán Czibor, Gyula Grosics, dentre outros. Mas existiam outras seleções fortes como o Uruguai bicampeão mundial, o Brasil (que tentava se recompor de 50 com Didi, Djalma Santos e Julinho Botelho) e a Alemanha Ocidental (com Fritz Walter, Max Morlock, Hans Schäfer e Helmut Rahn).
+            <br><br>
+
+            A Copa de 1954 foi disputada na Suíça e foi a primeira em solo europeu depois da Segunda Guerra Mundial. A escolha da sede levou em conta justamente a neutralidade da Suíça durante o conflito. Apesar do sucesso do certame cabe uma crítica à fórmula da copa, bastante confusa. Cada grupo tinha dois cabeças de chave que não se enfrentavam, assim como as duas equipes restantes que não se enfrentavam. Assim ao invés de 3 jogos cada, no sistema todos contra todos, realizaram-se apenas 2 jogos por equipe. Os cabeças de chave foram os seguintes:
+            <br><br>
+
+            Grupo 1: Brasil e França; <br>
+            Grupo 2: Hungria e Turquia; <br>
+            Grupo 3: Áustria e Uruguai; <br>
+            Grupo 4: Inglaterra e Itália. <br>
+            <br><br>
+
+            Primeira fase:
+            <br>
+            A Hungria, pelo Grupo 2, aplicou na 1ª fase duas goleadas históricas, uma sobre a fraca Coreia do Sul por 9-0 e a outra sobre nada mais, nada menos do que a Alemanha Ocidental, 8 a 3. Turquia e Alemanha Ocidental então tiveram que jogar o desempate pois terminaram empatados em pontos. A partida foi vencida pelos alemães com facilidade. O técnico Sepp Herberger colocou o time reserva em campo contra os húngaros, pois assim absorveria melhor uma mais que provável derrota e pouparia seus comandados.
+            <br><br>
+
+            Pelo Grupo 1, do Brasil, ocorreu um episódio bastante curioso. Brasil e Iugoslávia venceram seus primeiros compromissos (Brasil 5 a 0 México e Iugoslávia 1 a 0 França) e o empate garantia ambos na fase seguinte. Acontece que os jogadores do Brasil não conheciam o tal regulamento e atacavam insistentemente a meta iugoslava, com os jogadores eslavos fazendo gestos aos brasileiros pelo empate que beneficiaria os dois. Ao final do jogo alguns brasileiros choravam e apenas posteriormente a situação foi esclarecida. Tanto brasileiros como iugoslavos se classificaram à fase seguinte.
+            <br><br>
+
+            No grupo 3, Áustria e Uruguai classificaram-se sem problemas. A Celeste Olímpica ganhou da Tchecoslováquia por 2 a 0 e da Escócia por 7 a 0. Uma curiosidade é que, insatisfeito com as intromissões da comissão técnica no seu trabalho, o técnico da Escócia Andy Beattie pediu demissão logo após a derrota para a Áustria, sendo o único técnico a pedir demissão durante uma copa até hoje. A Áustria também passou fácil com 1 a 0 na Escócia e 5 a 0 na Tchecoslováquia. No Grupo D, o English Team tenta se refazer do desastre de 50, sua estreia em copas. Empata em um jogo espetacular com a Bélgica (4-4) e ganha da Suíça por 2 a 0. Suíça e Itália defrontaram-se duas vezes no grupo. Na primeira partida os helvéticos venceriam por 2 a 1 num jogo muito conturbado e de uma arbitragem bastante controversa do brasileiro Mário Vianna. As equipes se enfrentariam novamente, e no jogo desempate a Suíça vence por 4 a 1. Chega as Quartas de Final.
+            <br><br>
+
+            Fase final:
+            <br>
+            O Brasil foi a vítima magiar nas Quartas. Uma verdadeira batalha campal em Berna e a Hungria vence por 4 a 2. Áustria e Suíça fazem o jogo com maior número de gols da história dos mundiais: Áustria 7 – 5 Suíça. A Alemanha Ocidental vence a Iugoslávia por 2 a 0 e o Uruguai atropela a Inglaterra por 4 a 2.
+            <br><br>
+
+            Numa das semifinais tivemos a Áustria encarando a equipe da República Federal da Alemanha, uma das três nações alemãs da época. O time da RFA se classificou batendo os alemães da região do Sarre, ocupado pela França, enquanto a Alemanha Oriental não se inscreveu para a Copa. Com a final em jogo, a equipe alemã bateu a austríaca por 6 a 1. Destaque para os irmãos Fritz e Ottmar Walter, que, com passes rápidos, levaram sempre perigo ao gol austríaco.
+            <br><br>
+
+            Na outra semifinal, tivemos um dos mais interessantes jogos do torneio, onde a Hungria liderava sobre o Uruguai ao final do primeiro tempo por 1 a 0. Mas ao final dos noventa minutos o placar apontava 2 a 2, levando a partida a prorrogação. A igualdade foi quebrada por Sándor Kocsis, que marcaria dois gols no tempo extra e assim levando a Hungria a final, derrotando um time que jamais havia perdido um jogo de Copa do Mundo. O Uruguai sofreria sua segunda derrota ao ceder o terceiro lugar aos austríacos por 1 – 0.
+            <br><br>
+
+            Final:
+            <br>
+            O Estádio Wankdorf em Berna recebeu 60 mil pessoas que se espremeram para acompanhar a partida final entre Alemanha Ocidental e Hungria, uma repetição do jogo da primeira fase. Nesta fase, a Hungria venceu os reservas alemães por 8 a 3. O Time Dourado dos húngaros era o favorito, pois vinha de 32 partidas invicto, porém vinha de duas partidas duras. Começou a chover no dia do jogo - na Alemanha isso é chamado de "Fritz-Walter-Wetter" (tempo de Fritz Walter) pois dizia-se o capitão da equipe alemã Fritz Walter jogava seu melhor futebol na chuva, porque havia contraído malária quando jovem e por isso não atuava tão bem no calor. Adi Dassler, proprietário da Adidas e fornecedor de material esportivo para a seleção alemã, forneceu chuteiras com cravos intercambiáveis, que melhor se adaptariam ao campo molhado.
+            <br><br>
+
+            Na final se viu Ferenc Puskás atuando mesmo não estando em sua melhor forma. Ainda assim ele colocou seu time à frente do placar em apenas 6 minutos de jogo, e com Zoltán Czibor fazendo outro tento dois minutos depois parecia que os favoritos realmente levariam o título. Porém, com um rápido gol de Max Morlock no décimo minuto, e Helmut Rahn empatando aos 19, a maré começou a virar.
+            <br><br>
+
+            No segundo tempo a Hungria desperdiçou diversas chances. Mas, nervosos não conseguiram nada. Os alemães praticamente "cozinharam" o jogo a seu favor, e acabariam premiados. A meros seis minutos do final da partida, o popular narrador do rádio alemão Herbert Zimmermann fez sua mais memorável declaração ao dizer: "Rahn deveria chutar do meio da rua" (em alemão: "aus dem Hintergrund müsste Rahn schießen"), e assim foi. O segundo gol de Rahn, que chutou da meia-lua da área, após a zaga húngara afastar mal a bola, deu a liderança da partida aos alemães. Depois, Puskás ainda fez um gol impedido.
+            <br><br>
+
+            Aos alemães foi entregue a Taça Jules Rimet e o título de vencedores da Copa do Mundo com a torcida cantando junto o hino nacional alemão. Na Alemanha, esta partida é conhecida como o Milagre de Berna. Um filme baseado na história foi lançado em 2003. Para os húngaros, a derrota foi um desastre, e o seu declínio no futebol teria início somente dois anos depois, com a Revolução Húngara.
+            <br><br>
+
+            Os 11 gols marcados por Kocsis não apenas o garantiram a artilharia desta Copa, mas o tornou o recordista como artilheiro em uma Copa, superando Ademir de Menezes que havia marcado 9 tentos na copa anterior. A marca de Kocsis viria a ser quebrada na Copa seguinte por Just Fontaine e seus 13 gols.`//1954
+            ,
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 1958 foi a sexta edição da Copa do Mundo FIFA de Futebol, que ocorreu de 10 de junho até 29 de junho de 1958. O evento foi sediado na Suécia, tendo partidas realizadas nas cidades de Borås, Eskilstuna, Estocolmo, Gotemburgo, Halmstad, Helsingborg, Malmö, Norrköping, Örebro, Sandviken, Solna, Uddevalla e Västerås. Dezesseis seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo 12 delas europeias (Suécia, Alemanha Ocidental, Áustria, França, Tchecoslováquia, Hungria, União Soviética, Iugoslávia, Inglaterra, Irlanda do Norte, Escócia e País de Gales) e 4 americanas (Brasil, Argentina, Paraguai e México).
+            <br><br>
+
+            Formato: <br>
+            Quatro grupos de quatro equipes, mas desta vez todos enfrentavam todos pelo menos uma vez, e se houvesse empate em número de pontos para o terceiro colocado, teria um jogo desempate do qual o vencedor seguiria adiante. Se o desempate ficasse empatado, então a regra do saldo de gols dos jogos do grupo seria utilizada para determinar o classificado. Se ainda assim persistisse a igualdade, haveria sorteio. Se os dois primeiros colocados da chave terminassem empatados, o saldo de gols seria utilizado para definir o primeiro e o segundo. Este regulamento não havia sido concluído até o início da competição e continuou sendo debatido no meio do certame.
+            <br><br>
+
+            Favoritos: <br>
+            Tomando por base o torneio anterior disputado na Suíça em 1954, a campeã Alemanha Ocidental era favorita, mas perdera 7 jogos amistosos em 10 disputados. Embora tivesse renovado a equipe com os novatos Uwe Seeler e Karl-Heinz Schnellinger, a equipe base era praticamente a mesma que havia derrotado a Hungria na final de Berna, contando com seu capitão Fritz Walter, na época com 38 anos, e em fim de carreira.
+            <br><br>
+
+            A Hungria vinha forte desde que fora derrotada na final de 1954, mas a Revolução Húngara, ocorrida em 1956, onde os tanques soviéticos dominaram Budapeste, fizeram com que seus principais jogadores (Ferenc Puskas, Sándor Kocsis e Zoltán Czibor) fugissem do país, e se refugiassem em clubes da Espanha. Com isso, a Hungria iria para a Suécia com uma equipe que perdera seu brilho, e contava com uma mistura de remanescentes de 1954, como Gyula Grosics, László Budai e József Bozsik e novatos não-testados em competições internacionais, como Máté Fenyvesi, Károly Sándor, Ferenc Szojka e Lajos Tichy.
+            <br><br>
+
+            A União Soviética era uma das grandes favoritas, visto que, em 1956 ganhara a medalha de ouro no Torneio de Futebol, nos Jogos Olímpicos de Melbourne, e contara com toda a base que ganhara àquele torneio. Por sediar o torneio, a Suécia era grande favorita, e contava com atletas experientes, que jogavam na Série A italiana, como Nils Liedholm, Agne Simonsson, Gunnar Gren e Kurt Hamrin.
+            <br><br>
+
+            A Inglaterra tinha um bom time, mas veio enfraquecido, pois, seis meses antes do torneio, perdera Duncan Edwards, Tommy Taylor, e Roger Byrne, num desastre de avião em Munique. Os jogadores eram do Manchester United, equipe tricampeã inglesa, e que era a base da seleção nacional. Com isso, tiveram que refazer os planos para o Mundial, convocando jogadores que jogaram em 1950, como o veterano Tom Finney.
+            <br><br>
+            
+            Primeira Fase: <br>
+            No Grupo 1 a Alemanha Ocidental ficou em primeiro lugar. A Irlanda do Norte surpreendeu o mundo ao ficar com a segunda vaga após derrotar a Tchecoslováquia no jogo desempate. A Tchecoslováquia aplicou na Argentina uma super goleada por 6 a 1 e os jogadores foram recebidos em Buenos Aires com uma chuva de pedras e moedas.
+            <br><br>
+
+            No Grupo 2 o destaque foi a França. Com craques como Fontaine e Kopa o time goleou o Paraguai por 7 a 3 e venceu a Escócia por 2 a 1. Com um saldo tão bom a derrota para a Iugoslávia na segunda rodada não fez diferença. Os iugoslavos ficaram com a segunda vaga.
+            <br><br>
+
+            No Grupo 3 a Suécia, dona da casa, passeou. Gales ficou em segundo. Assim esta foi a única copa até hoje em que as quatro seleções britânicas participaram juntas (Escócia, Irlanda do Norte, País de Gales e Inglaterra), só a Inglaterra e a Escócia não se classificaram para as Quartas.
+            <br><br>
+
+            No Grupo 4 Brasil, Inglaterra, Áustria e URSS decidiriam 2 vagas. O Brasil estreou bem com 3 a 0 na Áustria. Após o empate em 0 a 0 contra o time da Inglaterra (o 1º da historia das copas), houve rumores de que os jogadores se reuniram com o treinador, Vicente Feola, e pediram a entrada de Mané Garrincha e Pelé no time, fato desmentido em diversas entrevistas e na biografia de Garrincha escrita por Ruy Castro. O real motivo foi que a comissão técnica poupou Garrincha do segundo jogo contra a Inglaterra, pois o zagueiro Slater entrava pesado nos adversários, e Pelé estava se tratando de um machucado. Mas o fato é que o Brasil venceu a URSS por 2-0, com dois gols de Vavá e grande atuação de Garrincha contra seu marcador. A URSS ficou com a outra vaga ao vencer a Inglaterra por 1 a 0 no jogo desempate.
+            <br><br>
+
+            Segunda Fase: <br>
+            Nas Quartas, o Brasil enfrentou a forte defesa do País de Gales. Nesta partida Pelé brilhou. Ele aplicou um drible curtíssimo em seu marcador ("chapéu") e girou de primeira para marcar o único gol do jogo. A França encarou a Irlanda do Norte em partida de grande atuação de Just Fontaine, que marcou dois dos quatro gols da vitória dos Bleus, por 4x0. Helmut Rahn marcou o único gol da partida entre alemães e iugoslavos, colocando os germânicos na semifinal. Os donos da casa bateram os soviéticos por 2x0.
+            <br><br>
+
+            Na semifinal a Suécia continuou sua escalada ao derrotar a Alemanha Ocidental por 3 a 1 num jogo conturbado, onde os megafones do estádio engrossavam o coro da torcida. Provocações aprendidas pelos suecos no futebol italiano fizeram com que o alemão Erich Juskowiak fizesse uma falta violenta e fosse expulso. O capitão alemão Fritz Walter sofreu uma contusão que encerraria sua carreira após uma falta, e como substituições só puderam ser feitas após a Copa de 1970, o time alemão ficou com dois jogadores a menos.
+            <br><br>
+
+            Na outra partida, um grande duelo. A melhor defesa (Brasil) contra o melhor ataque (França). O Brasil faz uma exibição brilhante, com Pelé, Garrincha, Vavá e Didi em um grande dia. Com apenas 1 minuto e meio de jogo o Brasil saiu na frente com gol de Vavá, e grandes atuações do time brasileiro se refletiram no resultado: 5 a 2 Brasil. Segundo Pelé a partida contra a França foi a mais difícil do mundial: " A França era o time que respeitávamos. Não joguei os dois primeiros jogos, o Brasil não foi bem, mas tinha certeza de que, se o Brasil ganhasse da França, seria campeão. Não perderíamos para outra equipe. E o melhor jogo nosso foi com a França. Contra a Suécia, time da casa, não tinha medo. Muita gente acha o jogo com o País de Gales o mais difícil, mas foi difícil porque só se defendiam. Não tivemos perigo. A França era a única que podia nos derrotar."
+            <br><br>
+
+            A França arrasa a Alemanha pelo terceiro lugar em um 6 a 3 histórico com quatro gols de Just Fontaine. Fontaine terminou a Copa com 13 gols e é até hoje o artilheiro com maior número de gols dentro de uma única Copa do Mundo.
+            <br><br>
+
+            Final: <br>
+            A final seria disputada no Estádio Råsunda entre Brasil e Suécia em frente a um público de 50.000 pessoas. O Brasil perde o sorteio e joga de azul, pois ambos os times tinham o uniforme nº 1 em amarelo. "Nós vamos vencer, vamos jogar com a cor do manto de Nossa Senhora Aparecida" disse o dirigente da delegação brasileira Paulo Machado de Carvalho. Nem o gol sueco que inaugurou o placar aos quatro minutos de jogo abalou a equipe. Didi, o príncipe etíope, certamente uma das peças mais importantes do time brasileiro, pegou a bola e foi calmamente andando com ela debaixo dos braços, lembrando a todos que o Botafogo, base daquela seleção, tinha dado uma goleada na Suécia, de forma que não ia ser a seleção brasileira que ia perder deles. Resultado: Vavá marca gol logo aos nove minutos e vira o jogo ainda no primeiro tempo numa partida excepcional que, mesmo com a derrota sueca por 5 a 2 em casa, foi aplaudida de pé pela torcida anfitriã, ao saudar como campeões do mundo Pelé, Vavá, Garrincha, Zito, Mazzola, Nilton Santos, Didi, Gilmar, Zagallo, entre outros. Assim o Brasil sagrava-se pela primeira vez campeão mundial de futebol.`//1958
+            ,
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 1962 foi a sétima edição da Copa do Mundo FIFA de futebol, que ocorreu de 30 de maio até 17 de junho. O evento foi sediado no Chile, tendo partidas realizadas nas cidades de Arica, Rancagua, Viña del Mar e Santiago (Ñuñoa). Dezesseis seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo 10 delas europeias (União Soviética, Iugoslávia, Alemanha Ocidental, Itália, Suíça, Tchecoslováquia, Espanha, Hungria, Inglaterra e Bulgária) e seis americanas (Chile, Brasil, Uruguai, Argentina, Colômbia e México).
+            <br><br>
+            As seleções da Bulgária e da Colômbia faziam sua primeira participação na competição. A edição teve duas grandes goleadas: Iugoslávia 5–Colômbia e Hungria 6–1 Bulgária, além do empate com o maior número de gols em Copas: União Soviética 4–4 Colômbia, partida na qual foi marcado o primeiro (e até hoje, único) gol olímpico em Copas do Mundo. O torneio contou com grandes jogadores, como Djalma Santos, Amarildo, Vavá e Garrincha do Brasil, Viliam Schrojf e Josef Masopust da Tchecoslováquia, e Karl-Heinz Schnellinger e Uwe Seeler da Alemanha Ocidental.
+            <br><br>
+
+            A grande campeã desta Copa do Mundo foi a Seleção Brasileira que, como campeã da Copa anterior de 1958, não havia participado das eliminatórias pois já tinha vaga garantida. O Brasil contou com muitos jogadores da Copa realizada na Suécia, como Gilmar, Djalma Santos, Nílton Santos, Didi, Zagallo, Vavá, Pepe, Zito, Bellini, Garrincha e Pelé. Na primeira partida do Brasil, o atacante Pelé, que neste ano viria a ser campeão mundial pelo Santos, marcou seu primeiro gol, mas se contundiu no segundo jogo contra a Tchecoslováquia, não podendo continuar no campeonato. A partir deste ocorrido, muitos dizem que esta foi a "Copa de Garrincha", considerado pela maioria como o melhor jogador da Copa e um dos grandes responsáveis pela conquista brasileira, sagrando-se artilheiro da competição ao lado de Vavá (que tornou-se o grande goleador dos dois primeiros títulos mundiais do Brasil) e de outros quatro jogadores.
+            <br><br>
+
+            A final da Copa do Mundo FIFA de 1962 foi disputada pela Tchecoslováquia, que havia eliminado a Iugoslávia e a Hungria; e o Brasil, que havia eliminado o Chile e a Inglaterra. A partida foi realizada no dia 17 de junho, às 14h30min, no Estádio Nacional do Chile, com um público estimado em 68 679 pessoas. Sob o apito do árbitro soviético Nikolay Latyshev, Josef Masopust abriu o placar aos 15 minutos, porém, dois minutos depois, Amarildo empatou o jogo, que terminou o primeiro tempo no 1–1. Aos 24 minutos do segundo tempo, Zito virou o jogo para a equipe brasileira e Vavá, nove minutos depois, ampliou a diferença, fechando o placar em 3–1. O capitão Mauro Ramos ergueu a taça Jules Rimet que assegurou o segundo título do Brasil em Copas do Mundo.`//1962
+            ,
+
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 1966 foi a oitava edição da Copa do Mundo FIFA de Futebol, que ocorreu de 11 de julho até 30 de julho. O evento foi sediado na Inglaterra, tendo partidas realizadas nas cidades de Birmingham, Liverpool, Londres, Manchester, Middlesbrough, Sheffield e Sunderland. Dezesseis seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo 10 delas europeias (Inglaterra, Itália, Alemanha Ocidental, Hungria, Suíça, Portugal, França, União Soviética, Bulgária e Espanha), 5 americanas (Brasil, Argentina, Chile, Uruguai e México) e 1 asiática (Coreia do Norte).
+            <br><br>
+            
+            A Copa de 1966 causou discordâncias antes mesmo que uma bola fosse chutada no primeiro jogo. Dezesseis nações africanas boicotaram o torneio em protesto contra uma resolução da FIFA de 1964 demandando que o vencedor da zona africana enfrentasse o vencedor da zona asiática ou da zona oceânica para se classificar à fase final. Os africanos acreditavam que vencer sua zona deveria bastar por si só para ter um lugar nas finais.
+            <br><br>
+            Mesmo com a ausência dos africanos, se estabeleceu mais um recorde de inscrições para as Eliminatórias, com 70 nações competindo. Depois de toda a discussão, a FIFA determinou que dez times da Europa se classificariam, junto com quatro da América do Sul, um da Ásia e um da América do Norte, América Central e Caribe.
+            <br><br>
+
+
+            Primeira Fase: <br>
+            A Copa do Mundo de 1966 teve um herói bastante incomum fora das quatro linhas, um cachorro chamado Pickles. Antes do torneio, a Taça Jules Rimet foi roubada de uma vitrine de exposição no Center Hall de Westminster, em Londres, junto a uma exposição filatélica. Uma caçada nacional pela taça foi instaurada. Ela foi descoberta enrolada em jornal quando um cão farejou alguns arbustos em Londres. A FA mandou que se fizesse uma réplica no caso que não encontrassem a original a tempo. Esta réplica está exposta no National Football Museum, na Inglaterra. O formato do certame se manteve o mesmo da Copa anterior: as 16 equipes classificadas se dividiriam em quatro grupos com quatro. Os dois primeiros de cada grupo avançariam às quartas-de-final.
+            <br><br>
+
+            Ainda que a Copa tenha conseguido grandes públicos, a competição foi marcada por ter poucos gols, isto ocorreu porque as equipes começaram a jogar de maneira muito mais tática e defensiva. Isso foi exemplificado pela Inglaterra de Alf Ramsey que terminou em primeiro lugar do grupo 1 com apenas quatro gols marcados, mas nenhum sofrido. O Uruguai foi o segundo classificado do grupo eliminando México e França. Todas as partidas deste grupo foram disputadas no Wembley Stadium, exceto pela partida entre França e Uruguai que foi disputada no White City Stadium.
+            <br><br>
+
+            No Grupo 2, a Alemanha Ocidental e a Argentina se classificaram com facilidade, ambos com 5 pontos. A Espanha fez 2, enquanto a Suíça deixou a competição após, pela segunda vez seguida em Copas do Mundo, perder todas as partidas.
+            <br><br>
+
+            No noroeste da Inglaterra, o Old Trafford e o Goodison Park serviram de sedes para o Grupo 3. Neste grupo o Brasil, campeão da copa anterior, seria eliminado por Portugal e Hungria. A Bulgária também seria eliminada. O Brasil foi derrotado por húngaros e portugueses em partidas controversas apitadas por dois juízes ingleses, Kenneth Dagnall e George McCabe, que decidiram ignorar uma grande quantidade de faltas nos brasileiros. Portugal chegava a fase final de uma Copa pela primeira vez, e jogou muito bem. A seleção lusa venceu as três partidas na fase de grupos, com belas atuações do prodigioso atacante Eusébio, que marcaria no total nove gols na Copa se tornando assim artilheiro da competição.
+            <br><br>
+
+            O Grupo 4 teve a maior surpresa da competição quando a Coreia do Norte bateu a Azzurra (Itália) por 1 a 0, e se classificou junto com a União Soviética. Além da Itália, o Chile foi eliminado.
+            <br><br>
+
+            Segunda Fase: <br>
+            Nas quartas-de-final, a Alemanha Ocidental bateu o Uruguai por 4 a 0 numa partida em que o árbitro inglês Jim Finney expulsou dois uruguaios: Horacio Troche e Hector Silva.
+            <br><br>
+
+            A Coreia do Norte esboçava goleada semelhante contra Portugal, pois em 22 minutos de jogo o placar era 3 a 0 para os norte coreanos, o que deixou os portugueses atordoados. Os Ingleses que estavam nas arquibancadas assistiam e gostavam do placar. Coube a Eusébio mudar esse panorama. O Pantera Negra marcou quatro gols e José Augusto marcaria o quinto, numa grande virada da equipe portuguesa. Este jogo é considerado um dos melhores jogos deste Mundial.
+            <br><br>
+
+            Nos outros jogos, a URSS de Lev Yashin bateu a Hungria por 2-1 e na partida entre Argentina e Inglaterra houve apenas um gol que seria dos ingleses, marcado por Geoff Hurst. Foi mais um jogo marcado por controvérsia arbitral. Antonio Rattín se tornou o primeiro jogador a ser expulso numa partida entre seleções em Wembley. O árbitro alemão, Rudolf Kreitlein, expulsou Rattín por indisciplina e por "olhar em seu rosto" mesmo não entendendo espanhol. Rattín primeiramente se recusou a sair de campo e acabou sendo escoltado por vários policiais.
+            <br><br>
+
+            Com os resultados das quartas, as quatro equipes restantes eram todas europeias. Ambas semifinais terminaram em 2 a 1: Franz Beckenbauer marcou o tento que deu a vitória para a Alemanha Ociental frente a URSS, enquanto Bobby Charlton marcou os dois gols da vitória inglesa sobre Portugal. Outro placar de 2 a 1 ocorreria na decisão do terceiro lugar com vitória portuguesa sobre os soviéticos.
+            <br><br>
+
+            Final: <br>
+            A partida se realizou no Wembley Stadium com cerca de 98 mil pessoas presentes. Após doze minutos de jogo, Helmut Haller colocou a Alemanha Ocidental na frente, mas Geoff Hurst empatou o jogo quatro minutos depois. Martin Peters virou o jogo em favor dos ingleses aos 78 minutos. Com um minuto para o fim da partida uma falta foi marcada em favor dos alemães. A bola foi lançada à área e Wolfgang Weber conseguiu tocá-la e levar o jogo a um novo empate, enquanto os ingleses reclamavam de um possível toque de mão.
+            <br><br>
+
+            Ao final dos 90 minutos, o placar era de 2 a 2, então foi jogada a prorrogação. No minuto 98, Hurst marcou novamente; seu chute bateu no travessão e quicou exatamente sobre a linha. Desde então se debate se a bola realmente passou a linha, o que faria uma grande diferença, uma vez que se o placar permanecesse empatado, a Alemanha Ocidental talvez não permitisse o mesmo espaço a Hurst.
+            <br><br>
+
+            Este gol polêmico serviu de plano de fundo para uma situação ligeiramente contrária na Copa de 2010, quando a Inglaterra marcou um gol contra o mesmo adversário, e em que a bola avançou cerca de 33 cm para depois da linha, sendo que o juiz o invalidou.
+            <br><br>
+
+            Imagens de arquivo observadas digitalmente ilustram que o segundo gol de Hurst não cruzou a linha. No último minuto, Hurst novamente marcou, passando pelo meio de campo alemão para efetuar seu terceiro gol na partida. Ao mesmo tempo a torcida invadiu o campo. Geoff Hurst se tornou assim o primeiro jogador a marcar três vezes numa final de Copa do Mundo.
+            <br><br>
+
+            A seleção inglesa recebeu a recuperada Taça Jules Rimet das mãos da Rainha Elizabeth II e se tornaram campeões do mundo pela primeira (e única) vez.`//1966
+            ,
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo de 1970 foi a 9ª edição da Copa do Mundo FIFA, que ocorreu de 31 de maio até 21 de junho. A competição, conquistada pelo Brasil, foi sediada no México, tendo partidas realizadas nas cidades de Guadalajara, León, Cidade do México, Puebla e Toluca. Dezesseis seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo nove delas europeias (União Soviética, Bélgica, Itália, Suécia, Inglaterra, Romênia, Tchecoslováquia, Alemanha Ocidental e Bulgária), cinco americanas (México, El Salvador, Uruguai, Brasil e Peru), uma asiática (Israel) e uma africana (Marrocos).
+            <br><br>
+            As seleções de El Salvador, Israel, e Marrocos faziam sua primeira participação na competição. A edição teve uma grande goleada: México 4-0 El Salvador. A Copa contou com grandes jogadores, como Lev Yashin, do União Soviética. Sepp Maier, Gerd Müller, Uwe Seeler, Karl-Heinz Schnellinger, Franz Beckenbauer e Wolfgang Overath, da Alemanha Ocidental. Dino Zoff, Giacinto Facchetti, Roberto Rosato, Sandro Mazzola, Luigi Riva, Gianni Rivera e Roberto Boninsegna, da Itália. Gordon Banks, Bobby Moore, Geoff Hurst, Martin Peters e Bobby Charlton, da Inglaterra. Teofilo Cubillas, do Peru. Mazurkiewicz e Pedro Rocha, do Uruguai. Pelé, Jairzinho, Tostão, Rivellino, Gérson, Clodoaldo, Piazza e Carlos Alberto Torres, do Brasil.
+            <br><br>
+
+            Esta Copa ficou marcada por vários lances geniais de Pelé que não terminaram em gol, como uma cabeçada defendida pelo goleiro inglês Gordon Banks e que ficou conhecida como a Defesa do Século, o chute de antes do meio-de-campo contra o goleiro Viktor da Tchecoslováquia que ficou conhecido como "O Gol que o Pelé não Fez", além de um Drible de corpo contra o goleiro uruguaio Mazurkiewicz.
+            <br><br>
+
+            Numa das semifinais desta Copa, ocorreu o chamado jogo do século, disputado entre as equipes da Alemanha Ocidental e da Itália. A partida permanecia 1–0 para a Itália até os 90 minutos, quando Karl-Heinz Schnellinger empatou a partida e levou a decisão para a prorrogação. Nessa prorrogação, ambas as seleções protagonizaram uma sucessão de viradas de placar até que a Itália firmou a vitória em 4–3. Esta partida é tida como a primeira e única em todas as Copas a ter cinco gols feitos na prorrogação.
+            <br><br>
+
+            Além destas equipes, uma das seleções favoritas era o Brasil que, embora tenha tido um retrospecto ruim em 1966, montou uma equipe repleta de estrelas, como Pelé, Jairzinho, Tostão, Rivellino, Gérson, Clodoaldo, Piazza e Carlos Alberto Torres. Nesta edição, o Brasil venceu todos os jogos das eliminatórias e da Copa. Esta equipe mostrou ser uma das mais eficientes de todos os tempos e foi considerada a melhor de todos os tempos.
+            <br><br>
+
+            A final desta edição foi disputada pelo Brasil, que havia eliminado o Uruguai e o Peru; e a Itália, que eliminara a Alemanha Ocidental e o México. A partida foi realizada em 21 de junho no Estádio Azteca na Cidade do México, com um público estimado em 108 000 pessoas. Sob o apito do árbitro alemão Rudolf Gloeckner, o primeiro tempo terminou empatado em 1–1. Ao final dos 90 minutos, o placar era de 4–1 para a equipe brasileira. O título serviu de propaganda política, quando o país estava no auge da ditadura militar brasileira. Este título também pôs o Brasil como a primeira seleção a ser tricampeã, confirmando a superioridade brasileira em relação ao futebol mundial. O capitão Carlos Alberto Torres levantou a Taça Jules Rimet entregue pela última vez em Copas, agora em caráter definitivo.`//1970
+            ,
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 1974 foi a décima edição da Copa do Mundo FIFA de Futebol, que ocorreu de 13 de junho até 7 de julho de 1974. O evento foi sediado na Alemanha Ocidental, que conquistou o título. A competição teve partidas realizadas nas cidades de Hamburgo, Hanôver, Gelsenkirchen, Dortmund, Düsseldorf, Frankfurt, Berlim Ocidental, Munique e Estugarda.
+            <br><br>
+            Dezesseis seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo 9 delas europeias (Alemanha Ocidental, Alemanha Oriental, Iugoslávia, Escócia, Holanda, Suécia, Bulgária, Polônia e Itália), 5 americanas (Chile, Brasil, Uruguai, Argentina e Haiti), 1 africana (Zaire) e 1 oceânica (Austrália). As seleções da Alemanha Oriental, da Austrália, do Haiti e do Zaire faziam sua primeira participação na competição, sendo a participação dessa última marcada por diversas polêmicas dentro de campo durante o campeonato.
+            <br><br>
+
+            A edição teve duas grandes goleadas: Haiti 0–7 Polônia e Iugoslávia 9–0 Zaire, sendo esta última, junto a Hungria 9–0 Coreia do Sul (em 1954) e Hungria 10–1 El Salvador (em 1982), as maiores goleadas em Copas do Mundo. A Copa de 1974 contou com grandes jogadores, como Grzegorz Lato e Kazimierz Deyna da Polônia, Ademir da Guia, Emerson Leão, Rivellino e Jairzinho do Brasil, Arie Haan, Willem van Hanegem, Ruud Krol, Rob Rensenbrink, Johnny Rep, Johan Neeskens e Johan Cruijff da Holanda e Sepp Maier, Berti Vogts, Paul Breitner, Hans-Georg Schwarzenbeck, Gerd Müller, Wolfgang Overath e Franz Beckenbauer da Alemanha, sendo Cruijff e Beckenbauer considerados dois dos melhores futebolistas da história do futebol mundial.
+            <br><br>
+
+            A grande revelação desta copa foi a Seleção Holandesa de Futebol, que, sob a batuta de Rinus Michels, voltou à copa após 36 anos de ausência, desde a sua segunda participação, em 1938, na França, utilizando como bases o AFC Ajax, campeão intercontinental em 1972, e o Feyenoord, campeão intercontinental em 1970. A seleção era conhecida como "Laranja Mecânica" e "Carrossel Holandês", devido à tática de Michels de alternar os jogadores em suas posições. O destaque dessa equipe era Johan Cruijff, que atuava bem tanto na defesa, quanto no meio-campo ou no ataque. De longe, era a seleção favorita ao título, tanto por seu modo atordoante de jogar futebol quanto por ser responsável pela eliminação da seleção brasileira, que defendia o título, e contava com jogadores que atuaram na Copa de 1970, como Jairzinho e Rivellino.
+            <br><br>
+
+            A Final da Copa do Mundo FIFA de 1974 foi disputada entre a Holanda e a Alemanha Ocidental. A partida foi realizada em 7 de julho às 16h, no Estádio Olímpico de Munique, com um público estimado em 75 200 pessoas. Com a vitória da Seleção Alemã, os jogadores Franz Beckenbauer, Sepp Maier, Wolfgang Overath, Jürgen Grabowski e Horst-Dieter Höttges, tornaram-se os 5 primeiros futebolistas a conquistar as medalhas de bronze, prata e de ouro em Copas do Mundo de futebol.`//1974
+            ,
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 1978 foi a 11.ª Copa do Mundo FIFA disputada, e contou com a participação de dezesseis países. O campeonato ocorreu na Argentina, que conquistou seu primeiro título. Ao todo, 107 países participaram das eliminatórias.
+            <br><br>
+            No grupo da Argentina, a Itália roubou a cena e venceu os seus três jogos da primeira fase: até venceu os donos da casa por 1–0. A Argentina venceu a Hungria e França (ambas por 2–1), e ficou com a segunda vaga. Neste grupo, França e Hungria foram eliminadas com derrotas nas duas primeiras rodadas, e jogaram em Mar del Plata. Pela definição da FIFA, a Hungria jogaria de branco e a França com o seu azul característico, mas a Federação Francesa, irritada com a organização por se considerar prejudicada pela arbitragem, mandou seu time também de branco como adversário, o que gerou uma grande confusão. Diante da orientação da FIFA que os húngaros tinham direito a jogar de branco, o árbitro Arnaldo Cezar Coelho exigiu que os franceses trocassem de modelo. Sem uniforme reserva no vestiário, vestiram a camisa do Kimberley, um clube amador de Mar del Plata. A França venceu a partida por 3–1. O Brasil tinha um time que incluía Zico e Roberto Rivellino. Empatou com a Suécia no primeiro jogo por 1–1, e no segundo, com a Espanha, por 0–0. Só se classificou ao vencer a Áustria no terceiro jogo, por 1–0. Mesmo com a derrota, a Áustria, que vencera os dois primeiros jogos, ficou com a outra vaga. A Espanha e a Suécia foram eliminadas. Os Países Baixos tiveram dificuldades em se classificar. Johan Cruijff, a estrela do time, recusou participar do torneio devido problemas familiares. O país venceu o Irã por 3–0, depois empatou com o Peru em 0–0 e perdeu da Escócia por 3–2. O Peru foi a grande sensação do grupo: venceu a Escócia por 3–1 e goleou o Irã por 4–1. A Alemanha Ocidental e a Polônia dividiram as vagas de seu grupo entre si sem maiores dificuldades. Neste grupo, a Tunísia fez história ao conquistar a primeira vitória de uma seleção africana em copas, fazendo 3–1 no México. Outro grande resultado da seleção africana foi um empate em 0–0 com a Alemanha Ocidental.
+            <br><br>
+
+            Estavam na segunda fase: Alemanha Ocidental, Áustria, Itália e Países Baixos no grupo A; e Argentina, Brasil, Peru e Polónia no grupo B. Os Países Baixos reencontraram seu melhor futebol e golearam a Áustria por 5–1, empatou com a Alemanha Ocidental em 2–2 e ganhou da favorita Itália por 2–1, conseguindo uma vaga para a final. A Itália que foi a grande sensação da primeira fase com 100% de aproveitamento empatou com a Alemanha em 0–0, derrotou a Áustria por 1–0 e foi disputar o 3º lugar, por ficar em 2º lugar do grupo. No grupo de Brasil e Argentina houve escândalos. O Brasil, modificado com as entradas de Rodrigues Neto, Jorge Mendonça e Roberto Dinamite nos lugares de Edinho, Zico e Reinaldo, se recuperou da apatia da 1ª fase e venceu o Peru por 3–0. A Argentina passou pela Polônia por 2–0. Em Rosário, argentinos e brasileiros empataram. Este empate seria fatal para o Brasil. Na última rodada, a equipe venceu tranquilamente a Polônia por 3–1. Com este resultado, restava à Argentina vencer o Peru por 4 gols de diferença. A Argentina goleou o Peru por 6–0. O resultado do jogo mandou o Brasil para a decisão de 3º lugar, que venceria da Itália por 2–1. A final foi decidida no Estádio Monumental de Núñez, em Buenos Aires. A Argentina venceu os Países Baixos por 3–1 na prorrogação e conquistou seu primeiro título mundial.
+            <br><br>
+
+            A organização do evento foi marcada por muitas falhas. Chegou-se mesmo a cogitar a transferência da Copa para a Europa. Em alguns lugares os estádios ficaram prontos na última hora, e por isso os gramados recém plantados se soltavam sob os pés dos jogadores. Enquanto a Argentina sediou quase todos os seus jogos em Buenos Aires, os principais rivais faziam um tour pelo país, se desgastando com longas viagens. Foi uma copa cercada de polêmicas, muito graças ao clima político da Argentina, que vivia uma ditadura militar que via na organização do torneio a oportunidade de popularizar o regime e promover a distração nacional dos problemas políticos e econômicos. Como forma simbolica de protesto, as equipes que cuidavam dos estadios que sediaram a copa do mundo pintaram as bases das traves de preto.
+            <br><br>
+
+            Esta Copa ficou marcada também por ter sido a única em que a Seleção que terminou em 3.º colocado (neste caso, o Brasil), não recebeu nenhuma medalha. Segundo a CBF "não há registro de entrada ou recebimento das medalhas pelo 3º lugar na Copa do Mundo de 1978 na CBF. No acervo cadastrado, está apenas uma placa pela participação da Seleção Brasileira, independentemente da posição, dada a todos os participantes.`//1978
+            ,
+
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 1982 foi a 12.ª edição da Copa do Mundo FIFA. Foi a primeira a contar com 24 seleções, entre elas várias estreantes. No total, 105 países participaram das eliminatórias. O campeonato ocorreu na Espanha e teve como campeã a Itália.
+            <br><br>
+            A seleção brasileira, comandada por Telê Santana com futebol ofensivo e goleador conquistou a Espanha e encantou o mundo. Jogadores como Leandro, Júnior, Toninho Cerezo, Paulo Roberto Falcão, Zico, Sócrates e Éder apresentaram um futebol de muita técnica, toque de bola vertical, lindos gols e muitos artilheiros no mesmo time, passando para a história como uma das melhores seleções de todos os tempos, mesmo não vencendo o campeonato.
+            <br><br>
+
+            Outras grandes seleções marcaram presença na Espanha: a França de Michel Platini, Jean Tigana, Manuel Amoros, Dominique Rocheteau e Marius Trésor; a Alemanha de Karl-Heinz Rummenigge, Horst Hrubesch, Manfred Kaltz, Felix Magath e Paul Breitner. A Argentina com craques campeões do mundo como Daniel Passarella, Osvaldo Ardiles, Daniel Bertoni, Mario Kempes e a promessa de supercraque Diego Armando Maradona.
+            <br><br>
+
+            Do lado da seleção italiana, que havia deixado uma ótima impressão em 1978, o experientíssimo Dino Zoff, Antonio Cabrini, Giuseppe Bergomi, Claudio Gentile, Gaetano Scirea, Francesco Graziani, Gabriele Oriali, Marco Tardelli, Bruno Conti e Paolo Rossi.
+            <br><br>
+            
+            Primeira Fase: <br>
+            A Argentina, campeã mundial, decepcionou. Os portenhos fizeram o jogo de abertura contra a Bélgica e perderam por 1 a 0. Classificaram-se em segundo lugar no grupo após vencerem a Hungria e El Salvador. Neste grupo, por um jogo a Hungria reviveu a máquina de Ferenc Puskás e cia. de 1954 e venceu El Salvador por 10 x 1. A Bélgica ficava com a primeira vaga no grupo, confirmando que o vice-campeonato na Eurocopa de 1980 não fora acidente.
+            <br><br>
+
+            No grupo da Alemanha Ocidental, ocorreu uma das maiores zebras da história das copas. A Argélia, estreante em copas do mundo, ganhou dos germânicos por 2 a 1. A seleção alemã, em seguida, goleou o Chile e venceu sua "irmã", a Áustria, por 1 a 0, no chamado "jogo da vergonha". Como o resultado classificava ambos os times, alemães e austríacos não tiveram escrúpulos em tocar a bola de um lado para outro, sob vaias e protestos do público. Os argelinos, mesmo brilhantes, com 2 vitórias em 3 jogos acabaram eliminados.
+            <br><br>
+
+            A França perdeu por 3 a 1 da Inglaterra na estreia, mas mesmo com uma campanha irregular conseguiu a classificação. Empatou com a Tchecoslováquia e ganhou do Kuwait por 4 a 1. Neste jogo, um sheik kuwaitiano, integrante da comissão técnica, invadiu o campo para protestar contra um gol da França e o árbitro anulou o gol. A Inglaterra com futebol sem criatividade, mas objetivo passou facilmente em primeiro lugar, pois venceu os tchecos por 2 x 0 e o Kuwait por 1 x 0, sendo a única seleção além do Brasil a bater os 100% de aproveitamento na primeira fase do mundial 82.
+            <br><br>
+
+            A Espanha, dona da casa, teve uma estreia decepcionante, mostrando que a "fúria" não iria longe na sua Copa em casa. Empatou em 1 x 1 contra a estreante em copas, Honduras, com um gol de pênalti no final da partida. Ficou em segundo lugar, em um grupo que foi liderado pela modesta Irlanda do Norte, que venceu os donos da casa por 1 x 0, após empatar com a Iugoslávia 0 x 0 e Honduras por 1 x 1. A Iugoslávia, mesmo sendo uma das favoritas do grupo não se classificou após derrota por 2 x 1 para a Espanha e vitória magra por 1 x 0 sobre Honduras; a derrota para os norte-irlandeses foi fatal para os eslavos do sul.
+            <br><br>
+
+            Já o Brasil, grande favorito ao título, estreou contra a União Soviética. Foi um jogo duríssimo, com a defesa brasileira falhando muito, além de um gol mal anulado do lado soviético, sem contar o pênalti não marcado para a seleção vermelha. Os soviéticos fizeram 1 a 0 numa falha de Waldir Peres. No segundo tempo, o Brasil colocou a bola no chão e o gênio de Sócrates explodiu no gol de empate: Sócrates driblou dois jogadores e soltou uma bomba no ângulo. Aos 43 minutos o gol da vitória, Éder Aleixo dispara um violento chute no ângulo de Rinat Dasayev: Brasil 2 a 1. Em seguida, a equipe de Telê venceu a Escócia, por 4 a 1 - foi a segunda virada dos Canarinhos. Zico brilhou com um bonito gol de falta. Contra a Nova Zelândia, a seleção novamente venceu por goleada, 4 a 0, com o Brasil desfilando em campo. A URSS após empate com a Escócia acabou ficando com a segunda vaga, pois tinha melhor saldo que a seleção britânica. Uma vez mais os escoceses não passavam da primeira fase de um mundial.
+            <br><br>
+
+            Em Vigo, a Itália dava um vexame após outro. Foram 3 péssimos jogos na primeira fase da Copa. Empate com Polônia, Peru e Camarões, e a Azzurra só se classificou por ter feito um gol a mais que os africanos. A Polônia de Lato e Boniek goleou o Peru por 5 x 1 e ficou com o primeiro lugar do grupo. O clima da seleção italiana era tão ruim, que o técnico Enzo Bearzot ordenou que seus jogadores não dessem entrevistas, e não lessem os jornais, para que não se deixassem contaminar pelo pessimismo da imprensa italiana.
+            <br><br>
+
+            Segunda Fase: <br>
+            Estátua comemorativa da Copa em Corunha, uma das cidades que sediaram jogos.
+            A Copa de 1982 contou com um regulamento único. Como eram 6 grupos de 4 times, e apenas os 2 primeiros se classificavam, 12 times formaram 4 grupos de 3 times na segunda fase, de onde os campeões de cada grupo fariam a semifinal.
+            <br><br>
+
+            No grupo da França, a seleção de Michel Platini despachou a Áustria e a Irlanda do Norte. Já a Polônia de Lato e Boniek, voltava a fazer uma copa comparável com a célebre campanha de 1974, e eliminava a Bélgica e a URSS, ganhando um lugar na semifinal.
+            <br><br>
+
+            A Alemanha Ocidental sepultou o sonho espanhol do primeiro título e despachou a "Fúria", além do English Team, provando, uma vez mais, o grande poder de recuperação das seleções alemãs, como em 1954 e 1974.
+            <br><br>
+
+            Na segunda fase, o Brasil enfrentaria Argentina e Itália. Primeiramente, o Brasil atropelou a Argentina, se vingando de 1978. Com uma exibição irrepreensível, o time comandado em campo por Zico, envolveu a defesa da Argentina e chegou a fazer 3 x 0. A emblemática imagem de Júnior na beira do campo, sambando ao som da batucada da torcida, dava provas do poderio do futebol-arte do Brasil. Nesse jogo, o então jovem Maradona, não resistiu à incapacidade de reação do time portenho e foi expulso após desferir um verdadeiro golpe de arte marcial em Batista. No final o Brasil venceu por 3 x 1, em uma humilhante despedida para os campeões do mundo, de malas prontas para retornarem à Buenos Aires.
+            <br><br>
+
+            O outro time do grupo, a Itália, jogou três jogos péssimos na fase de classificação, porém, na hora da verdade, a mística da Azzurra incendiou a equipe, que disparou rumo ao tricampeonato. A seleção europeia venceu o primeiro jogo contra a Argentina por 2 a 1, complicando e muito a situação dos portenhos, que, como já visto, perderam do Brasil. Depois, viria um dos grandes jogos da Copa, para muitos, a grande partida, que definiu os rumos do mundial.
+            <br><br>
+
+            O Show de Paolo Rossi no Sarriá: <br>
+            Brasil e Itália se enfrentaram pelo terceiro jogo da segunda fase em seu grupo. Como a Argentina tinha perdido por 2 x 1 para a Itália, e por 3 x 1 para o Brasil, a seleção canarinho, aquela altura tida como favorita ao título, tinha a vantagem do empate para se classificar em primeiro no grupo. A maioria dos torcedores brasileiros acreditava em uma vitória tranquila, pois a Itália, até então, só havia vencido um jogo na copa, enquanto o Brasil era o único com aproveitamento de 100%. Logo no início da partida, aos 5 minutos, ataque da Itália com um cruzamento vindo da esquerda e cabeceio do artilheiro Paolo Rossi, com a defesa brasileira apenas assistindo a cabeceada do italiano. Seguiu o jogo, o Brasil não se intimidou. Ainda no 1º tempo, Zico se livra de Claudio Gentile e toca para Sócrates, o "doutor" invadiu a área e chutou colocado e forte, empatando o confronto. A Itália marcava forte a saída de bola do Brasil, e forçava o erro da seleção. Em uma reposição de bola do goleiro brasileiro Waldir Peres, Toninho Cerezzo fez um toque lateral para o meio, entre Luisinho e Falcão, o veloz Paolo Rossi tomou a bola, encaminhou-se de frente para o gol brasileiro e chutou forte, marcando 2 x 1.
+            <br><br>
+
+            Mas o "time canarinho" ainda tinha todo o 2º tempo para empatar e se classificar. Foi no segundo tempo que o time de Telê pressionou o adversário buscando o empate. Em um lance memorável Júnior saiu com a bola da lateral esquerda para o meio, tocou a bola para Falcão na entrada da área, Cerezzo fez uma ultrapassagem que levando a marcação e abrindo espaço na defesa da squadra azzurra, e Falcão chutou forte empatando o confronto: 2 x 2. Aquele resultado era o suficiente para a classificação do Brasil. Mas o lance fatal viria logo em seguida: escanteio para a Itália, o time brasileiro, que só jogava no ataque, estava todo dentro da área. Cobrado o escanteio, a bola sobrou na entrada da área, um chute é desferido e a bola achou ele, Paolo Rossi, que desviou a trajetória e matou Valdir Peres: 3 x 2. Detalhe: Junior estava embaixo da trave brasileira dando condições ao matador italiano Rossi. Depois disso tudo, a Itália teve um gol legítimo mal anulado pela arbitragem (que aumentaria o placar da derrota brasileira para 2 X 4) e o Brasil teve uma última chance no finalzinho da partida, mas o veterano e excepcional goleiro Dino Zoff confirmou a derrota brasileira ao fazer uma defesa espetacular em uma cabeçada certeira de Oscar.
+            <br><br>
+
+            A semifinal: <br>
+            A Alemanha passou à final após uma vitória épica contra a França de Platini, no outro jogo que marcou a Copa, ao lado de Brasil x Itália. No tempo normal, 1 a 1. Na prorrogação, a França chega a fazer 3 a 1. Mas, os alemães, liderados por Rummenigge, buscaram o resultado e empataram o jogo em 7 minutos, numa das mais espetaculares reações de todos os tempos. Na primeira decisão por pênaltis da história, deu Alemanha. O lado lamentável foi a covarde agressão que o goleiro alemão, Harald Schumacher, cometeu sobre Patrick Battiston, que caiu no chão sem sentidos, o que fez muitos acreditarem que o atacante francês havia morrido.
+            <br><br>
+
+            A Itália venceu a Polônia, em Barcelona, por 2 x 0, dois gols de Paolo Rossi, agora carrasco também dos poloneses, que perderam mais uma vez a chance de chegar a uma final de copa.
+            <br><br>
+
+            Na decisão do terceiro lugar, a França sucumbiu frente aos "Águias Brancas", que igualariam o 3º lugar de 1974: Polônia 3 x 2 França.
+            <br><br>
+
+            A final: <br>
+            A final da Copa aconteceu no Estádio Santiago Bernabéu, em Madri. Mas o que era para ser um clássico virou um passeio italiano. A Azzurra passeou em campo, embalada pelas vitórias sobre Argentina e Brasil, e não tomou conhecimento da Alemanha. O 1º tempo termina com 0 x 0. No 2º tempo porém, a seleção italiana abriu 3 x 0, sendo o primeiro gol do carrasco Paolo Rossi, que assim se tornava o artilheiro do torneio, com 6 gols. A Alemanha ainda descontou, mas já era tarde para a reação do time germânico. A Itália era mesmo a campeã, consagrada em cima da Argentina (campeã do mundo), do Brasil (favorito ao título) e da Alemanha (sua maior rival).`//1982
+            ,
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo de 1986 da FIFA foi a 13ª Copa do Mundo da FIFA, um torneio quadrienal de futebol para seleções nacionais masculinas. Foi realizada no México de 31 de maio a 29 de junho de 1986. O torneio foi o segundo a adotar o formato de 24 equipes. A Colômbia havia sido originalmente escolhida para sediar a competição pela FIFA, mas, em grande parte devido a motivos econômicos, não foi capaz de fazê-lo e renunciou em 1982. O México foi selecionado como novo país-sede em maio de 1983 e se tornou o primeiro país a sediar a Copa do Mundo mais de uma vez, após sediar anteriormente em 1970.
+            <br><br>
+            A Copa do Mundo foi vencida pela Argentina (seu segundo título, depois de vencer em 1978). A Argentina foi capitaneada pelo jovem de 25 anos Diego Maradona, que teve um papel importante no sucesso de sua equipe ao marcar o gol conhecido como "Mão de Deus", além de outro gol eleito o "Gol do Século", ambos no mesmo jogo das quartas de final contra a Inglaterra. Esses foram dois dos cinco gols que Maradona marcou durante o torneio, e ele também criou mais cinco para seus companheiros de equipe. A Argentina derrotou a Alemanha Ocidental por 3 a 2 na final no Estádio Azteca, na Cidade do México. A presença total de espectadores foi de 2.394.031, uma média por partida de 46.039. O Canadá, a Dinamarca e o Iraque fizeram suas primeiras aparições na fase final.
+            <br><br>
+
+            O formato da competição mudou a partir de 1982. Os dois últimos jogos de cada grupo começaram ao mesmo tempo, e a segunda fase foi disputada em formato eliminatório, em vez de grupos. As 24 equipes classificadas foram divididas em seis grupos de quatro (A a F). As duas melhores equipes e as quatro melhores terceiras colocadas dos seis grupos avançaram para a fase eliminatória com 16 equipes. A Itália era a atual campeã, mas foi eliminada pela França nas oitavas de final.
+            <br><br>
+
+            O torneio viu a aparição da "Ola Mexicana", um fenômeno de espectadores que se popularizou mundialmente após ser apresentado durante o torneio.`//1986
+            ,
+
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 1990 foi a décima quarta edição da Copa do Mundo FIFA de Futebol, que ocorreu de 8 de junho até 8 de julho de 1990. O evento foi sediado na Itália, tendo partidas realizadas nas cidades de Milão, Roma, Nápoles, Turim, Bari, Verona, Florença, Cagliari, Bolonha, Údine, Palermo e Gênova. A Itália foi o segundo país a sediar a competição por duas vezes (o primeiro foi o México, quatro anos antes).
+            <br><br>
+
+            Além da anfitriã Itália e da então campeã mundial de 1986, Argentina (na época a seleção campeã da edição anterior se classificava automaticamente para a edição seguinte), se classificaram para o torneio a Alemanha Ocidental (que viria a se sagrar campeã dessa edição) Bélgica, Inglaterra, Escócia, Áustria, Suécia, Iugoslávia, Espanha, Países Baixos, União Soviética, Tchecoslováquia, Irlanda, Romênia, Camarões, Egito, Emirados Árabes, Coreia do Sul, Uruguai, Colômbia, Brasil, Costa Rica e Estados Unidos.
+            <br><br>
+
+            Grandes estrelas do futebol mundial desfilaram pelos gramados italianos, como Gary Lineker, Paul Gascoigne, David Platt e Ian Wright da Inglaterra, Ronald Koeman, Frank Rijkaard, Marco Van Basten e Ruud Gullit da Holanda e Bodo Illgner, Andreas Brehme, Lothar Matthäus, Rudi Völler e Jürgen Klinsmann da Alemanha, Diego Maradona da Argentina, dentre outros. A Copa de 1990 entrou para a história como uma Copa de equipes defensivas, que jogavam apenas para alcançar o resultado - a média de gols, de apenas 2,21, registrou um recorde negativo que perdura até hoje. Essa situação levou à mudança de regras (mais notadamente a regra do recuo de bola), e à adoção de três pontos por vitória. Apesar disso, também foi uma Copa de grandes goleadas, como EUA 1-5 Tchecoslováquia e Alemanha 5-1 Emirados Árabes Unidos, e de grandes surpresas, como a vitória de Camarões sobre a Argentina logo na 1ª rodada do Mundial.
+            <br><br>
+
+            A final da Copa do Mundo FIFA de 1990 foi disputada pela Argentina, que havia eliminado a Itália, a Iugoslávia e o Brasil; e a Alemanha Ocidental, que havia eliminado a Inglaterra, a Tchecoslováquia e os Países Baixos. A partida foi realizada em 8 de julho às 20h, no Estádio Olímpico de Roma, com um público de 73 603 pessoas. Sob o apito do árbitro mexicano Edgardo Codesal, Andreas Brehme converteu uma penalidade - até hoje muito contestada - aos 40 minutos do segundo tempo, trazendo o terceiro título da Alemanha Ocidental em Copas do Mundo. Foi a última copa disputada pelas seleções da União Soviética e Tchecoslováquia.`//1990
+            ,
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 1994 foi a 15ª edição sediada nos Estados Unidos, sendo o 1º Mundial a ser realizado neste país. Apesar da pouca tradição norte-americana no futebol, foi este mundial que bateu todos os recordes de público, mantidos até os dias de hoje. Com um futebol extremamente eficiente e com um grupo muito unido liderado pelo polêmico craque Romário, a Seleção brasileira conquistou o quarto título mundial ao bater a Itália na final. O titulo do Brasil foi comemorado também como uma homenagem ao tricampeão mundial de Fórmula 1 Ayrton Senna, falecido em 1 de maio daquele ano.
+            <br><br>
+
+            A edição foi aberta no estádio Soldier Field, em Chicago, no dia 17 de junho, com direito a performance da cantora Diana Ross. No mesmo dia, aconteceu o jogo de abertura entre a Alemanha (sua primeira Copa reunificada) contra a Bolívia. A seleção Alemã venceu o jogo por 1–0, com gol do atacante Jürgen Klinsmann. Nesse jogo, o craque boliviano Marco Etcheverry recebeu o primeiro cartão vermelho da Copa, após agredir Lothar Matthäus, fazendo jus ao apelido de "El Diablo". Estreante em copas, a Arábia Saudita mostrou ao mundo do futebol a que veio no terceiro jogo contra a Bélgica. Após receber a bola do campo de sua equipe, Saeed Al-Owairan decidiu partir para cima dos belgas e após driblar meio time, tocou na saída do experiente goleiro Michel Preud'homme, um dos melhores do mundo na época e que seria eleito o melhor daquela Copa, marcando o mais belo gol do Mundial.
+            <br><br>
+
+            O Brasil fez a seguinte campanha: duas vitórias e um empate na fase de grupos: 2–0 contra a Rússia, 3–0 contra Camarões e 1–1 contra a Suécia; nas oitavas de final derrotou os Estados Unidos por 1–0; nas quartas de final eliminou os Países Baixos por 3–2; na semifinal, 1–0 frente à Suécia; na grande final, o Brasil jogou contra a Itália, o jogo terminou empatado em 0–0 nos 90 minutos do tempo normal e na prorrogação. O Brasil conquistou o título após ganhar a disputa por pênaltis pelo placar de 3–2 e se tornou a primeira seleção tetracampeã mundial de futebol.
+            <br><br>
+
+            Foi uma Copa do Mundo de grandes surpresas. A Bulgária, que até ali em 6 participações anteriores jamais havia vencido um jogo de Copa do Mundo, superou grandes favoritos, sendo a 2.ª colocada em um grupo que tinha a Argentina, além de eliminar em um jogo emocionante a Alemanha, até então a Campeã mundial defensora, por 2–1 nas quartas de final. Chegou à semifinal e terminou em 4.º lugar.`//1994
+            ,
+
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 1998 foi a décima sexta edição da Copa do Mundo FIFA de Futebol e a primeira a contar com 32 seleções. Ocorreu de 10 de junho até 12 de julho de 1998. O evento foi sediado na França, pela segunda vez, tendo partidas realizadas nas cidades de Saint-Denis, Marselha, Paris, Lens, Lyon, Nantes, Toulouse, Saint-Étienne, Bordéus e Montpellier. Trinta e duas seleções nacionais foram qualificadas para participar desta edição do campeonato, sendo quinze delas europeias, oito americanas, cinco africanas e quatro asiáticas. O torneio foi marcado por goleadas, entre elas França 4 x 0 Arábia Saudita, Brasil 4 x 1 Chile, Espanha 6 x 1 Bulgária, Holanda 5 x 0 Coreia do Sul e Argentina 5 x 0 Jamaica.
+            <br><br>
+
+            A final da Copa do Mundo FIFA de 1998 foi disputada pela França, que havia eliminado a Croácia, a Itália e o Paraguai; e o Brasil, que havia eliminado a Holanda, a Dinamarca e o Chile. A partida foi realizada em 12 de julho às 21 horas, no Stade de France, com um público estimado em oitenta mil pessoas. Sob o apito do árbitro marroquino Said Belqola, Zinédine Zidane marcou duas vezes no primeiro tempo e Emmanuel Petit ampliou aos 48 minutos do segundo tempo, terminando a partida em 3 a 0, derrotando a seleção brasileira, então a última campeã do mundo e única tetracampeã da época. O capitão francês Didier Deschamps levantou a taça do primeiro título da França em Copas do Mundo. Ele voltaria a conquistar um título mundial com a seleção francesa 20 anos depois, dessa vez como técnico, se juntando ao brasileiro Zagallo e ao alemão Franz Beckenbauer a ter conseguido esse feito como jogador e como treinador.
+            <br><br>
+
+            A copa teve vários destaques, como Edwin van der Sar, Jaap Stam, Frank de Boer, Edgar Davids, Patrick Kluivert e Dennis Bergkamp da Holanda, Brian Laudrup e Michael Laudrup da Dinamarca, Gabriel Batistuta, Ariel Ortega e Verón da Argentina, David Beckham e Michael Owen da Inglaterra, Paolo Maldini e Christian Vieri da Itália, Davor Šuker da Croácia, Gamarra e Chilavert do Paraguai, Taffarel, Roberto Carlos, Cafu, Dunga, Rivaldo e Ronaldo Fenômeno do Brasil e Fabien Barthez, Lilian Thuram, Marcel Desailly, Laurent Blanc, Didier Deschamps, Youri Djorkaeff, Thierry Henry e Zinédine Zidane da França.`//1998
+            ,
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 2002, também conhecida como Coreia Japão 2002, foi a 17ª edição do torneio, realizado a cada quatro anos para as seleções nacionais masculinas de futebol e organizado pela FIFA. O evento ocorreu de 31 de maio a 30 de junho de 2002, em locais na Coreia do Sul e no Japão, com a partida final sediada pelo Japão no Estádio Internacional em Yokohama.
+            <br><br>
+
+            Um total de 32 equipes se classificaram para esta Copa do Mundo, que foi a primeira a ser realizada na Ásia, a primeira fora das Américas ou da Europa, e também a primeira a ser co-sediada por mais de um país. China, Equador, Senegal e Eslovênia fizeram suas estreias na Copa do Mundo.
+            <br><br>
+
+            O torneio teve vários resultados surpreendentes, incluindo a eliminação dos campeões defensores, a França, na fase de grupos, após conquistar apenas um ponto sem marcar gols, e a eliminação da Argentina, segunda favorita, também na fase de grupos. A Coreia do Sul conseguiu chegar às semifinais, derrotando Polônia, Portugal, Itália e Espanha no caminho. Eles se tornaram a primeira equipe fora das regiões da UEFA, CONMEBOL e CONCACAF e uma das primeiras equipes asiáticas (juntamente com a Turquia nesta Copa do Mundo) a alcançar as semifinais de uma Copa do Mundo. No entanto, a equipe mais forte do torneio, o Brasil, prevaleceu, vencendo a final contra a Alemanha por 2 a 0, tornando-se o primeiro e único país a conquistar a Copa do Mundo cinco vezes. A vitória qualificou o Brasil para as Copas das Confederações da FIFA de 2003 e subsequentemente de 2005, sendo sua quarta e quinta aparições consecutivas na Copa das Confederações. Na disputa pelo terceiro lugar contra a Coreia do Sul, a Turquia venceu por 3 a 2, conquistando o terceiro lugar em apenas sua segunda participação na Copa do Mundo, e marcou o gol mais rápido na história da Copa do Mundo (10,8 segundos após o início da partida).
+            <br><br>
+
+            A Copa do Mundo de 2002 foi também a última a utilizar a regra do "gol de ouro" e a última a usar a mesma bola em todas as partidas. A partir de 2006 até o presente, uma bola com as mesmas especificações técnicas, mas de cores diferentes, tem sido utilizada na final.`//2002
+            ,
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 2006 foi a 18ª edição do torneio e foi realizada na Alemanha, de 9 de junho a 9 de julho de 2006. Foi a primeira vez que a Alemanha sediou o torneio desde a reunificação do país em 1990. A competição contou com a participação de 32 seleções nacionais masculinas de futebol.
+            <br><br>
+
+            A Copa do Mundo de 2006 foi marcada por grandes momentos e partidas emocionantes. Os jogos foram disputados em 12 estádios diferentes, espalhados por toda a Alemanha. As cidades-sede incluíam Berlim, Munique, Frankfurt, Hamburgo, Stuttgart, Dortmund, Colônia e várias outras.
+            <br><br>
+
+            O torneio apresentou alguns destaques notáveis. A Itália acabou se tornando campeã ao derrotar a França na final, vencendo por 5 a 3 nos pênaltis após um empate de 1 a 1 no tempo regulamentar e na prorrogação. O gol da França foi marcado por Zinedine Zidane, enquanto Marco Materazzi marcou o gol de empate da Itália. A final ficou marcada pelo infame incidente em que Zidane foi expulso após dar uma cabeçada em Materazzi.
+            <br><br>
+
+            Ao longo do torneio, vimos performances impressionantes de várias equipes. A Alemanha, país-sede, surpreendeu ao alcançar as semifinais, liderada por jogadores como Miroslav Klose e Michael Ballack. A seleção portuguesa também teve um bom desempenho, chegando às semifinais com um time talentoso que incluía Cristiano Ronaldo, Deco e Luís Figo.
+            <br><br>
+
+            Outra equipe que se destacou foi a seleção da Argentina, liderada pelo talentoso Lionel Messi em sua primeira participação em uma Copa do Mundo. A Argentina chegou até as quartas de final, onde foi derrotada pela Alemanha em uma emocionante disputa de pênaltis.
+            <br><br>
+
+            O artilheiro da Copa do Mundo de 2006 foi Miroslav Klose, da Alemanha, com um total de 5 gols. Zinedine Zidane, da França, foi um dos jogadores mais destacados do torneio, mostrando sua habilidade e liderança em campo.
+            <br><br>
+
+            A Copa do Mundo de 2006 também ficou marcada por algumas polêmicas. Além do incidente de Zidane na final, houve controvérsias em algumas partidas devido a decisões de arbitragem questionáveis.
+            <br><br>
+
+            Em termos de organização, a Copa do Mundo de 2006 foi considerada um sucesso. Os estádios foram bem preparados e os torcedores desfrutaram de uma atmosfera vibrante e acolhedora em toda a Alemanha. Foi um evento que trouxe alegria e paixão pelo futebol para fãs de todo o mundo.`//2006
+            ,
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 2010 foi a 19ª edição do torneio e foi realizada na África do Sul, de 11 de junho a 11 de julho de 2010. Foi a primeira vez que o continente africano sediou a Copa do Mundo. O torneio contou com a participação de 32 seleções nacionais masculinas de futebol.
+            <br><br>
+
+            A Copa do Mundo de 2010 ficou marcada por ser uma competição bastante equilibrada, com muitas surpresas e resultados inesperados. Os jogos foram disputados em nove cidades-sede na África do Sul, incluindo Joanesburgo, Cidade do Cabo, Pretória, Durban e Port Elizabeth.
+            <br><br>
+
+            A Espanha sagrou-se campeã pela primeira vez na história ao derrotar a seleção dos Países Baixos na final por 1 a 0, na prorrogação. O gol da vitória foi marcado por Andrés Iniesta. A seleção espanhola, liderada por jogadores como Xavi, Andrés Iniesta e David Villa, mostrou um futebol de posse de bola e técnica refinada ao longo do torneio.
+            <br><br>
+
+            Outras equipes que se destacaram na Copa do Mundo de 2010 incluem a Alemanha, que fez uma campanha sólida e terminou em terceiro lugar, e o Uruguai, que alcançou as semifinais após uma longa ausência nas fases finais do torneio. O Uruguai, liderado por Diego Forlán, conquistou o quarto lugar ao ser derrotado pela Alemanha na disputa pelo terceiro lugar.
+            <br><br>
+
+            A equipe da casa, África do Sul, teve um desempenho decente ao chegar à fase de oitavas de final, onde foi eliminada pela seleção do México. A seleção da Argentina, liderada por Lionel Messi, também fez uma boa campanha até as quartas de final, onde foi derrotada pela Alemanha por 4 a 0.
+            <br><br>
+
+            A Copa do Mundo de 2010 também ficou marcada por algumas polêmicas. Houve debates sobre a qualidade das bolas utilizadas no torneio, com alguns jogadores e técnicos reclamando de sua imprevisibilidade. Além disso, houve incidentes de arbitragem controversos, especialmente no jogo entre a Alemanha e a Inglaterra, em que um gol claramente válido para a Inglaterra não foi concedido.
+            <br><br>
+
+            Um momento importante e emocionante do torneio foi o desfile das equipes nacionais em um espírito de unidade e celebração cultural. A África do Sul fez um excelente trabalho ao sediar o evento, proporcionando uma atmosfera festiva e acolhedora para os torcedores de todo o mundo.
+            <br><br>
+
+            Em resumo, a Copa do Mundo de 2010 na África do Sul foi um torneio repleto de momentos emocionantes e surpresas. A Espanha emergiu como a campeã, a Alemanha demonstrou seu poderio, e várias equipes proporcionaram um futebol de qualidade. Foi um marco histórico para o continente africano e mostrou ao mundo a paixão e a capacidade de realizar um evento esportivo de grande escala.`//2010
+            ,
+
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 2014 foi a 20ª edição do torneio e foi realizada no Brasil, de 12 de junho a 13 de julho de 2014. Foi a segunda vez que o Brasil sediou a Copa do Mundo, sendo a primeira vez em 1950. O torneio contou com a participação de 32 seleções nacionais masculinas de futebol.
+            <br><br>
+
+            A Copa do Mundo de 2014 foi marcada por grandes emoções, jogos intensos e algumas surpresas. Os jogos foram disputados em 12 cidades-sede no Brasil, incluindo Rio de Janeiro, São Paulo, Brasília, Salvador, Belo Horizonte e Manaus.
+            <br><br>
+
+            A Alemanha sagrou-se campeã ao derrotar a Argentina na final por 1 a 0, na prorrogação. O gol da vitória foi marcado por Mario Götze. A seleção alemã, liderada por jogadores como Philipp Lahm, Bastian Schweinsteiger e Thomas Müller, mostrou um futebol coletivo e eficiente ao longo do torneio.
+            <br><br>
+
+            Outras equipes que se destacaram na Copa do Mundo de 2014 incluem a seleção da Holanda, que terminou em terceiro lugar ao vencer o Brasil na disputa pelo terceiro lugar, e a seleção da Colômbia, que encantou os torcedores com um futebol ofensivo e criativo, liderada por James Rodríguez, artilheiro do torneio.
+            <br><br>
+
+            A equipe da casa, Brasil, teve um desempenho decepcionante, sendo eliminada nas semifinais após uma derrota humilhante por 7 a 1 para a Alemanha. Essa partida ficou marcada como um dos maiores vexames da história do futebol brasileiro. O Brasil ainda perdeu o jogo pelo terceiro lugar para a Holanda por 3 a 0.
+            <br><br>
+
+            A Copa do Mundo de 2014 também foi notável pelo uso da tecnologia de linha do gol pela primeira vez. Esse sistema ajudou a determinar se a bola cruzou completamente a linha do gol em situações de dúvida, evitando decisões controversas.
+            <br><br>
+
+            O torneio também ficou marcado por momentos emocionantes, como o gol de James Rodríguez contra o Uruguai, que foi eleito o gol mais bonito do torneio. Além disso, o público brasileiro proporcionou uma atmosfera vibrante e calorosa em todos os estádios, com a famosa expressão "Ole, ole, ole, ola, Brasil!" sendo entoada pelos torcedores.
+            <br><br>
+
+            Em resumo, a Copa do Mundo de 2014 foi um torneio repleto de momentos emocionantes, surpresas e recordes. A Alemanha emergiu como campeã, o Brasil viveu um dos momentos mais difíceis de sua história futebolística, e várias equipes proporcionaram um futebol de qualidade. O evento também deixou um legado com o uso da tecnologia de linha do gol. Foi um momento especial para o futebol brasileiro e uma celebração do esporte em todo o mundo.`//2014
+            ,
+
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 2018 foi a 21ª edição do torneio e foi realizada na Rússia, de 14 de junho a 15 de julho de 2018. Foi a primeira vez que a Rússia sediou a Copa do Mundo. O torneio contou com a participação de 32 seleções nacionais masculinas de futebol.
+            <br><br>
+
+            A Copa do Mundo de 2018 foi marcada por jogos emocionantes, surpresas e algumas zebras. As partidas foram disputadas em 11 cidades-sede na Rússia, incluindo Moscou, São Petersburgo, Kazan, Sochi e Rostov-on-Don.
+            <br><br>
+
+            A França sagrou-se campeã ao derrotar a Croácia na final por 4 a 2. A seleção francesa, liderada por jogadores como Antoine Griezmann, Kylian Mbappé e Paul Pogba, mostrou um futebol rápido e eficiente ao longo do torneio. A Croácia, por sua vez, fez uma campanha impressionante ao chegar à final pela primeira vez em sua história.
+            <br><br>
+
+            Outras equipes que se destacaram na Copa do Mundo de 2018 incluem a Bélgica, que terminou em terceiro lugar ao vencer a Inglaterra na disputa pelo terceiro lugar, e a seleção da Inglaterra, que chegou às semifinais após uma longa ausência nas fases finais do torneio.
+            <br><br>
+
+            A Alemanha, campeã na edição anterior, teve um desempenho abaixo das expectativas e foi eliminada ainda na fase de grupos. Outras seleções consideradas favoritas, como Argentina e Espanha, também foram eliminadas precocemente.
+            <br><br>
+
+            O artilheiro do torneio foi Harry Kane, da Inglaterra, com seis gols. Luka Modric, da Croácia, recebeu o prêmio de melhor jogador do torneio, enquanto o goleiro belga Thibaut Courtois foi eleito o melhor goleiro.
+            <br><br>
+
+            Além das partidas em campo, a Copa do Mundo de 2018 também foi marcada por momentos fora do campo, como a hospitalidade russa e a atmosfera festiva nas cidades-sede. Os torcedores de diferentes nacionalidades se reuniram para celebrar o futebol e compartilhar experiências culturais.
+            <br><br>
+
+            Em resumo, a Copa do Mundo de 2018 na Rússia foi um torneio repleto de emoção, com a França se sagrando campeã. Houve surpresas, decepções e momentos memoráveis ​​ao longo do torneio. Foi uma oportunidade para os fãs de futebol de todo o mundo se reunirem e celebrarem o esporte em um ambiente de competição amigável.`//2018
+            ,
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            `A Copa do Mundo FIFA de 2022 foi a vigésima segunda edição desse evento esportivo, um torneio internacional de futebol masculino organizado pela Federação Internacional de Futebol (FIFA) que ocorreu no Catar. Esta edição foi a primeira realizada no Oriente Médio, e foi a última a ter o formato de 32 equipes, uma vez que está prevista uma mudança no formato e número de equipes na edição seguinte, a de 2026, cujos países-sedes serão Canadá, Estados Unidos e México, passando para 48 equipes.
+            <br><br>
+
+            Com sete cidades-sede, o campeonato foi disputado entre 20 de novembro e 18 de dezembro, ao invés do período tradicional devido às altas temperaturas que o país sofre no meio do ano; esta foi a primeira vez em que uma Copa do Mundo foi disputada no final do ano.
+            <br><br>
+
+            Acusações de corrupção foram feitas após o Catar ganhar o direito de sediar o campeonato. A FIFA realizou uma investigação interna sobre estas alegações e absolveu o Catar de qualquer crime cometido. Em 27 de maio de 2015, promotores federais suíços abriram uma investigação sobre corrupção e lavagem de dinheiro nas eleições das cidades-sede das edições de 2018 e 2022.
+            <br><br>
+
+            Em 7 de junho de 2015, foi anunciado que o Catar poderia perder o direito de sediar o campeonato, após denúncias de suborno. De acordo com Domenico Scala, representante da auditoria da FIFA, as denúncias surgiram após a divulgação do resultado da votação de eleição da cidade-sede. Porém, nenhum indício foi comprovado e o Catar foi confirmado como sede desta edição.
+            <br><br>
+
+            O Catar sofreu críticas sobre as condições dos trabalhadores dos novos estádios para a competição, sendo que a Anistia Internacional referiu-se como trabalho escravo a situação dos trabalhadores que sofriam abusos de direitos humanos, violando diversas regras da instituição.
+            <br><br>
+
+            A FIFA apresentou o mascote oficial da Copa do Mundo de 2022, denominado La'eeb, um lenço de cabeça masculino tradicional da cultura árabe. Segundo a FIFA, a palavra La'eeb significa "jogador habilidoso" em árabe.
+            <br><br>
+
+            Pela primeira vez na história da Copa do Mundo, o país-sede do mundial iniciou a competição com derrota, uma vez que o Catar foi superado num placar de 2x0 contra a seleção do Equador. Conforme a tradição, o anfitrião sempre estreia com vitória ou com empate. Além disso, também se tornou o segundo organizador a não avançar para as oitavas de final desde a África do Sul em 2010.
+            <br><br>
+
+            A edição também ficou marcada pelas famosas zebras, que ocasionaram nas derrotas da Argentina contra a seleção da Arábia Saudita e do Brasil contra a seleção de Camarões, sendo ambos na fase de grupos. A seleção de Marrocos acabou sendo a grande surpresa dessa Copa, uma vez que avançou para o mata-mata em uma inédita liderança, eliminando as fortes seleções da Espanha e Portugal nas oitavas e quartas de final, respectivamente, sofrendo suas únicas derrotas contra a França na semifinal e a Croácia na disputa pelo terceiro lugar. Foi também a primeira vez que uma seleção africana avança para uma semifinal da Copa do Mundo, além de conquistar a quarta posição, sendo também o melhor resultado do continente. Japão e Coreia do Sul voltariam a fase final após 20 anos, também passando por resultados inesperados.
+            <br><br>
+
+            A seleção francesa se juntaria a Itália (1934-1938), Brasil (1958-1962; 1994-1998-2002), Argentina (1986-1990) e Alemanha Ocidental (1982-1986-1990) como a equipe chegou a uma grande final em duas ou três vezes seguidas. A Argentina avançaria para uma decisão após oito anos, fazendo com duas seleções disputassem o tricampeonato, algo que ocorreu em 1970, quando Brasil e Itália disputavam o tricampeonato, conquistado pelo Brasil; em 1982, quando a Itália conquistou o tri vencendo a então bicampeã Alemanha Ocidental; em 1990, quando Alemanha e Argentina duelaram pela terceira conquista, tendo a equipe germânica logrado êxito; e em 1994, quando, novamente, Brasil e Itália disputavam o tetracampeonato, conquistado novamente pelo Brasil. Em uma disputa nos pênaltis, a Argentina conquistou seu terceiro título em uma final considerada uma das melhores de todos os tempos, quebrando um jejum de 36 anos sem ganhar uma Copa do Mundo, além de encerrar uma sequência de vitórias de times europeus imposta desde 2006.`//2022
+        ]
+        function trocarCopa() {
+        var copa = Number(slct_copa.value)
+        var contador = 0
+        while (contador < historias_copas.length){
+            if(copa == contador){
+                historia.style.height = 'fit-content'
+                title.innerHTML = `Copa do mundo de ${copas[contador]}`
+                body.innerHTML = historias_copas[contador]
+                return
+            }
+            else{
+                contador++
+            }
         }
     }
 </script>
