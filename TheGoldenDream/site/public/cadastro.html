@@ -22,7 +22,7 @@
         <ul>
             <li><a href="./index.html">Home</a></li>
             <li><a href="./historia.html">História</a></li>
-            <li><a href="#">Quiz</a></li>
+            <li><a href="./quizmain.html">Quiz</a></li>
             <li><a href="#">Records</a></li>
             <li><a href="./galeria.html">Galeria</a></li>
             <li><a href="./login.html" id="Sign_In">Entrar</a>
@@ -86,7 +86,7 @@
 
         if (inp_email.value.indexOf('@') < 0 || inp_email.value.length < 7) {
             Swal.fire({
-                position: 'center-center',
+                position: 'center',
                 icon: 'error',
                 title: 'Erro',
                 text: 'Email Inválido!',
@@ -96,7 +96,7 @@
         }
         else if (userNameVar.length < 4) {
             Swal.fire({
-                position: 'center-center',
+                position: 'center',
                 icon: 'error',
                 title: 'Erro',
                 text: 'Nome de usuário curto demais!',
@@ -106,7 +106,7 @@
         }
         else if (celularUserVar.length < 14) {
             Swal.fire({
-                position: 'center-center',
+                position: 'center',
                 icon: 'error',
                 title: 'Erro',
                 text: 'Numero de celular inválido!',
@@ -116,7 +116,7 @@
         }
         else if (senhaUserVar.length < 6) {
             Swal.fire({
-                position: 'center-center',
+                position: 'center',
                 icon: 'error',
                 title: 'Erro',
                 text: 'Insira uma senha com pelo menos 6 caracteres!',
@@ -126,7 +126,7 @@
         }
         else if (senhaUserVar != confirmacaoSenhaVar) {
             Swal.fire({
-                position: 'center-center',
+                position: 'center',
                 icon: 'error',
                 title: 'Erro',
                 text: 'As senhas não correspondem!',
@@ -156,7 +156,7 @@
 
             if (resposta.ok) {
                 Swal.fire({
-                    position: 'center-center',
+                    position: 'center',
                     icon: 'success',
                     title: 'Sucesso!',
                     text: 'Indo para página de login!',
@@ -170,7 +170,7 @@
 
             } else {
                 Swal.fire({
-                    position: 'center-center',
+                    position: 'center',
                     icon: 'error',
                     title: 'Erro',
                     text: 'nome de usuario, email ou celular já cadastrados!',

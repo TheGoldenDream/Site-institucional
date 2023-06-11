@@ -21,7 +21,7 @@
             <li><a href="./index.html">Home</a></li>
             <li><a href="./historia.html">História</a></li>
             <li><a href="#">Records</a></li>
-            <li><a href="#">Quiz</a></li>
+            <li><a href="./quizmain.html">Quiz</a></li>
             <li><a href="./galeria.html">Galeria</a></li>
             <li><a href="#" id="Sign_In">Entrar</a>
             <li><a href="./cadastro.html" id="Sign_In">Cadastrar-se</a></li>
@@ -89,11 +89,11 @@
                     console.log(JSON.stringify(json));
 
                     sessionStorage.EMAIL_USUARIO = json.emailUser;
-                    sessionStorage.NOME_USUARIO = json.UserName;
+                    sessionStorage.NOME_USUARIO = json.userName;
                     sessionStorage.ID_USUARIO = json.idUser;
 
                     Swal.fire({
-                        position: 'center-center',
+                        position: 'center',
                         icon: 'success',
                         title: 'Sucesso!',
                         text: 'Entrando no site...!',
@@ -102,7 +102,7 @@
                     })
 
                     setTimeout(() => {
-                        window.location = "a.html";
+                        window.location = "index.html";
                     }, "1500") // apenas para exibir o loading
 
                 });
@@ -110,7 +110,7 @@
             } else {
 
                 Swal.fire({
-                    position: 'center-center',
+                    position: 'center',
                     icon: 'error',
                     title: 'Erro!',
                     text: 'Usuário ou senha inválidos!',

@@ -1,99 +1,64 @@
--- Arquivo de apoio, caso você queira criar tabelas como as aqui criadas para a API funcionar.
--- Você precisa executar os comandos no banco de dados para criar as tabelas,
--- ter este arquivo aqui não significa que a tabela em seu BD estará como abaixo!
+create database TGD;
 
-/*
-comandos para mysql - banco local - ambiente de desenvolvimento
-*/
+use TGD;
 
-CREATE DATABASE aquatech;
-
-USE aquatech;
-
-CREATE TABLE usuario (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50)
+create table usuario(
+idUser int primary key auto_increment,
+userName varchar(50) unique,
+emailUser varchar(100) unique,
+celularUser varchar(15) unique,
+senhaUser varchar(250),
+dataCadastro datetime default now()
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT,
-	FOREIGN KEY (fk_usuario) REFERENCES usuario(id)
+create table pontuacao(
+idPontuacao int primary key auto_increment,
+pontuacao int,
+fkUsuario int,
+constraint fkUserPont foreign key (fkUsuario) references usuario (idUser)
 );
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	descricao VARCHAR(300)
-);
-
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-create table medida (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT,
-	FOREIGN KEY (fk_aquario) REFERENCES aquario(id)
+create table jogadores(
+id int primary key auto_increment,
+nome varchar (100),
+gols int,
+partidasJogadas int,
+golsUmaEdicao int
 );
 
 
-/*
-comando para sql server - banco remoto - ambiente de produção
-*/
-
-CREATE TABLE usuario (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	nome VARCHAR(50),
-	email VARCHAR(50),
-	senha VARCHAR(50),
+create table selecoes(
+id int primary key auto_increment,
+selecao varchar(40),
+titulos int,
+golsUmaEdicao int,
+Participacoes int
 );
 
-CREATE TABLE aviso (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	titulo VARCHAR(100),
-	descricao VARCHAR(150),
-	fk_usuario INT FOREIGN KEY REFERENCES usuario(id)
-);
+insert into jogadores values 
+	(null, 'Miroslav Klose', 16, 24, 5),
+    (null, 'Ronaldo', 15, 19, 8),
+    (null, 'Gerd Müller', 14, 13, 10),
+    (null, 'Just Fontaine', 13, 6, 13),
+    (null, 'Lionel Messi', 13, 26, 7),
+    
+    (null, 'Lothar Matthäus', 6, 25, null),
+    (null, 'Cristiano Ronaldo', 8, 22, null),
+    (null, 'Uwe Seeler', 9, 21, null),
+    
+    (null, 'Sándor Kocsis', 11, 6, 11),
+    (null, 'Ademir de Menezes', 9, 6, 9),
+    (null, 'Eusébio', 9, 6, 9);
+    
+insert into selecoes values 
+	(null, 'Brasil', 5, 22, 22),
+	(null, 'Alemanha', 4, 25, 20),
+	(null, 'Itália', 4, 12, 18),
+	(null, 'Argentina', 3, 18, 18),
+	(null, 'França', 2, 23, 16),
+    
+	(null, 'Hungria', 0, 27, 9),
 
-create table aquario (
-/* em nossa regra de negócio, um aquario tem apenas um sensor */
-	id INT PRIMARY KEY IDENTITY(1,1),
-	descricao VARCHAR(300)
-);
-
-/* esta tabela deve estar de acordo com o que está em INSERT de sua API do arduino - dat-acqu-ino */
-
-CREATE TABLE medida (
-	id INT PRIMARY KEY IDENTITY(1,1),
-	dht11_umidade DECIMAL,
-	dht11_temperatura DECIMAL,
-	luminosidade DECIMAL,
-	lm35_temperatura DECIMAL,
-	chave TINYINT,
-	momento DATETIME,
-	fk_aquario INT FOREIGN KEY REFERENCES aquario(id)
-);
-
-/*
-comandos para criar usuário em banco de dados azure, sqlserver,
-com permissão de insert + update + delete + select
-*/
-
-CREATE USER [usuarioParaAPIWebDataViz_datawriter_datareader]
-WITH PASSWORD = '#Gf_senhaParaAPIWebDataViz',
-DEFAULT_SCHEMA = dbo;
-
-EXEC sys.sp_addrolemember @rolename = N'db_datawriter',
-@membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
-
-EXEC sys.sp_addrolemember @rolename = N'db_datareader',
-@membername = N'usuarioParaAPIWebDataViz_datawriter_datareader';
+	(null, 'México', 0, 12, 17);
+    
+ 

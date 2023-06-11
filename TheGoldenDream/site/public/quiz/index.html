@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quiz || The Golden Dream</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="../index.html" class="image">
+        <img src="../assets/img/logo.png" style="max-width: 100px;">
+      </a>
+    </div>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../historia.html">História</a></li>
+      <li><a href="#">Quiz</a></li>
+      <li><a href="#">Records</a></li>
+      <li><a href="../galeria.html">Galeria</a></li>
+      <li><a href="./login.html" class="Sign_In" id="login">Entrar</a>
+      <li><a href="./cadastro.html" class="Sign_In" id="cadastro">Cadastrar-se</a></li>
+      <li><a id="perfil" class="Sign_In" style="cursor: pointer;"></a></li>
+      <li><a onclick="sair()" id="logout" class="Sign_In" style="cursor: pointer; padding: 5px;"><img
+            src="../assets/img/logout.png" style="width: 31px;"></a></li>
+
+    </ul>
+  </header>
+  <div class="fundo">
+    <h2 id="titulo_quiz">QUIZ COPA DO MUNDO (FACIL)</h2>
+    <main>
+      <div class="content">
+        <span class="spnQtd"></span>
+        <span class="question"></span>
+        <div class="answers"></div>
+      </div>
+      <div class="finish">
+        <span style="color: white; text-align: center;"></span>
+        <button id="restart">Reiniciar</button>
+        <button id="ranking">Ver Ranking</button>
+        <button id="mudar_dificuldade">Tentar outra dificuldade</button>
+      </div>
+    </main>
+  </div>
+  <script src="./script.js" type="module"></script>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+  if (sessionStorage.NOME_USUARIO != undefined) {
+    perfil.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`
+    cadastro.style.display = 'none'
+    login.style.display = 'none'
+    perfil.style.display = 'block'
+    logout.style.display = 'block'
+
+  }
+
+  function sair() {
+    sessionStorage.clear()
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'OK!',
+      text: 'Saindo de sua conta!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+
+    setTimeout(() => {
+      window.location = '../index.html'
+    }, 1500);
+  }
+</script>

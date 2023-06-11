@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz || The Golden Dream</title>
+    <link rel="stylesheet" href="./css/styleQuiz.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="./index.html" class="image">
+                <img src="./assets/img/logo.png" style="max-width: 100px;">
+            </a>
+        </div>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./historia.html">História</a></li>
+            <li><a href="#">Records</a></li>
+            <li><a href="#">Quiz</a></li>
+            <li><a href="./galeria.html">Galeria</a></li>
+            <li><a href="./Login.html" class="Sign_In" id="login">Entrar</a>
+            <li><a href="./cadastro.html" class="Sign_In" id="cadastro">Cadastrar-se</a></li>
+            <li><a id="perfil" class="Sign_In" style="cursor: pointer;"></a></li>
+            <li><a onclick="sair()" id="logout" class="Sign_In" style="cursor: pointer; padding: 5px;"><img
+                        src="../assets/img/logout.png" style="width: 31px;"></a></li>
+        </ul>
+    </header>
+    <section class="modes" id="modes">
+        <h2>Você se considera: </h2>
+        <div class="cards">
+            <div class="card" id="easy" onclick="facil()">
+                <div class="title">Novato em Copas do Mundo?</div>
+                <div class="button">
+                    <span>Então clique aqui para testar nosso quiz na dificuldade fácil</span>
+                </div>
+            </div>
+            <div class="card" id="medium" onclick="medio()">
+                <div class="title">Profissional em Copas do Mundo?</div>
+                <div class="button">
+                    <span>Então clique aqui para testar nosso quiz na dificuldade média</span>
+                </div>
+            </div>
+            <div class="card" id="hard" onclick="dificil()">
+                <div class="title">Expert em Copas do Mundo?</div>
+                <div class="button">
+                    <span>Então clique aqui para testar nosso quiz na dificuldade difícil</span>
+                </div>
+            </div>
+        </div>
+        <h2 style="margin-top: 20px;">Continue descendo para ver o Ranking <br> de maiores pontuadores do quiz!</h2>
+    </section>
+    <section class="ranking">
+        <div class="grafico">
+            <div class="graph">
+                <canvas id="myChartCanvas"></canvas>
+            </div>
+            <div class="label-captura">
+                <p id="avisoCaptura1" style="color: white"></p>
+            </div>
+        </div>
+    </section>
+
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+    window.onload = obterDadosGrafico();
+
+
+    if (sessionStorage.NOME_USUARIO == undefined) {
+        window.location = './Login.html'
+    }
+
+    if (sessionStorage.NOME_USUARIO != undefined) {
+        perfil.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`
+        cadastro.style.display = 'none'
+        login.style.display = 'none'
+        perfil.style.display = 'block'
+        logout.style.display = 'block'
+    }
+    function facil() {
+        sessionStorage.DIFICULDADE = 'FÁCIL'
+        transicao()
+    }
+    function medio() {
+        sessionStorage.DIFICULDADE = 'MÉDIO'
+        transicao()
+    }
+    function dificil() {
+        sessionStorage.DIFICULDADE = 'DIFÍCIL'
+        transicao()
+    }
+
+    function transicao() {
+        setTimeout(() => {
+            window.location = './quiz/index.html'
+        }, 500);
+    }
+    function sair() {
+        sessionStorage.clear()
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'OK!',
+            text: 'Saindo de sua conta!',
+            showConfirmButton: false,
+            timer: 1500
+        })
+
+        setTimeout(() => {
+            window.location = './index.html'
+        }, 1500);
+    }
+
+    function obterDadosGrafico() {
+
+        fetch(`/pontuacoes/obterDadosGrafico`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+
+                    plotarGrafico(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarGrafico(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Pontos',
+                data: [],
+                fill: false,
+                borderColor: '#fff',
+                backgroundColor: 'rgb(255, 215, 0, 0.7)',
+                color: '#000'
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.Usuário);
+            dados.datasets[0].data.push(registro.Pontuação);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas`),
+            config
+        );
+    }
+</script>

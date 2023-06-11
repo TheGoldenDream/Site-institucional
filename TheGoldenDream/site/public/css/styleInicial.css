@@ -60,7 +60,7 @@ header ul li :hover{
     transition: 0.5s;
     color: white;
 }
-header ul li #Sign_In{
+header ul li .Sign_In{
     display: inline-block;
     color: black;
     font-size: 1.2em;
@@ -274,4 +274,12 @@ footer .copyright {
     color: white;
     margin: 1% 7%;
     font-size: 0.9em;
+}
+
+#perfil{
+    display: none;
+}
+
+#logout{
+    display: none;
 }

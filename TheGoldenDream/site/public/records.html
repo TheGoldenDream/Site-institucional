@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records || The Golden Dream</title>
+    <link rel="stylesheet" href="./css/styleRecords.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <a href="./index.html" class="image">
+                <img src="./assets/img/logo.png" style="max-width: 100px;">
+            </a>
+        </div>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./historia.html">História</a></li>
+            <li><a href="#">Records</a></li>
+            <li><a href="#">Quiz</a></li>
+            <li><a href="./galeria.html">Galeria</a></li>
+            <li><a href="./Login.html" class="Sign_In" id="login">Entrar</a>
+            <li><a href="./cadastro.html" class="Sign_In" id="cadastro">Cadastrar-se</a></li>
+            <li><a id="perfil" class="Sign_In" style="cursor: pointer;"></a></li>
+            <li><a onclick="sair()" id="logout" class="Sign_In" style="cursor: pointer; padding: 5px;"><img
+                        src="./assets/img/logout.png" style="width: 31px;"></a></li>
+        </ul>
+    </header>
+    <section class="graficos">
+        <h3 class="tituloGraficos"></h3>
+        <div class="graph">
+            <h3 class="tituloGraficos">
+                Mais partidas jogadas
+            </h3>
+            <div class="graph">
+                <canvas id="myChartCanvas1"></canvas>
+            </div>
+        </div>
+        <div class="graph">
+            <h3 class="tituloGraficos">
+                Mais Gols
+            </h3>
+            <div class="graph">
+                <canvas id="myChartCanvas2"></canvas>
+            </div>
+        </div>
+        <div class="graph">
+            <h3 class="tituloGraficos">
+                Mais Gols em uma unica edição
+            </h3>
+            <div class="graph">
+                <canvas id="myChartCanvas3"></canvas>
+            </div>
+        </div>
+    </section>
+    <section class="graficos">
+        <div class="graph">
+            <h3 class="tituloGraficos">
+                Mais Participações
+            </h3>
+            <div class="graph">
+                <canvas id="myChartCanvas4"></canvas>
+            </div>
+        </div>
+        <div class="graph">
+            <h3 class="tituloGraficos">
+                Mais Títulos
+            </h3>
+            <div class="graph">
+                <canvas id="myChartCanvas5"></canvas>
+            </div>
+        </div>
+        <div class="graph">
+            <h3 class="tituloGraficos">
+                Mais gols em uma edição
+            </h3>
+            <div class="graph">
+                <canvas id="myChartCanvas6"></canvas>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    window.onload = obterDadosGrafico1();
+
+    if (sessionStorage.NOME_USUARIO != undefined) {
+        perfil.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`
+        cadastro.style.display = 'none'
+        login.style.display = 'none'
+        perfil.style.display = 'block'
+        logout.style.display = 'block'
+    }
+
+    function sair() {
+        sessionStorage.clear()
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'OK!',
+            text: 'Saindo de sua conta!',
+            showConfirmButton: false,
+            timer: 1500
+        })
+
+        setTimeout(() => {
+            window.location = './index.html'
+        }, 1500);
+    }
+
+    function obterDadosGrafico1() {
+
+        fetch(`/records/obterDadosGrafico1`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta1) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta1)}`);
+                    resposta1.reverse();
+
+                    plotarGrafico(resposta1);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+
+    function plotarGrafico(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Títulos',
+                data: [],
+                fill: false,
+                borderColor: '#fff',
+                backgroundColor: 'rgb(255, 215, 0)',
+                color: '#000'
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.selecao);
+            dados.datasets[0].data.push(registro.titulos);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas1`),
+            config
+        );
+    }
+</script>

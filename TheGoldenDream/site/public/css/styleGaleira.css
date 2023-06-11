@@ -64,7 +64,7 @@ header ul li :hover {
     color: white;
 }
 
-header ul li #Sign_In {
+header ul li .Sign_In {
     display: inline-block;
     color: black;
     font-size: 1.2em;
@@ -197,4 +197,12 @@ h2{
     text-align: center;
     color: white;
     font-size: 2.0em;
+}
+
+#perfil{
+    display: none;
+}
+
+#logout{
+    display: none;
 }

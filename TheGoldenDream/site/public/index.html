@@ -12,19 +12,20 @@
 <body>
     <header>
         <div class="logo">
-            <a href="#" class="image">
+            <a href="./index.html" class="image">
                 <img src="./assets/img/logo.png" style="max-width: 100px;">
             </a>
         </div>
         <ul>
             <li><a href="#">Home</a></li>
             <li><a href="./historia.html">História</a></li>
-            <li><a href="#">Records</a></li>
-            <li><a href="#">Quiz</a></li>
+            <li><a href="./records.html">Records</a></li>
+            <li><a href="./quizmain.html">Quiz</a></li>
             <li><a href="./galeria.html">Galeria</a></li>
-            <li><a href="./login.html" id="Sign_In">Entrar</a>
-            <li><a href="./cadastro.html" id="Sign_In">Cadastrar-se</a></li>
-
+            <li><a href="./login.html" class="Sign_In" id="login">Entrar</a>
+            <li><a href="./cadastro.html" class="Sign_In" id="cadastro">Cadastrar-se</a></li>
+            <li><a id="perfil" class="Sign_In" style="cursor: pointer;"></a></li>
+            <li><a onclick="sair()" id="logout" class="Sign_In" style="cursor: pointer; padding: 5px;"><img src="../assets/img/logout.png" style="width: 31px;"></a></li>
         </ul>
     </header>
     <section class="homeContainer">
@@ -54,7 +55,7 @@
                     </p>
                 </div>
                 <div class="button">
-                    <a href="#">Quero saber tudo sobre as copas!</a>
+                    <a href="./historia.html">Quero saber tudo sobre as copas!</a>
                 </div>
             </div>
             <div class="image"><img src="./assets/img/peléGarricha.png" style="max-height: 600px;">
@@ -93,7 +94,7 @@
                     </p>
                 </div>
                 <div class="button">
-                    <a href="#">Quero testar meus conhecimentos agora!!</a>
+                    <a href="./quizmain.html">Quero testar meus conhecimentos agora!!</a>
                 </div>
             </div>
         </div>
@@ -123,3 +124,31 @@
 </body>
 
 </html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    
+    if(sessionStorage.NOME_USUARIO != undefined){
+        perfil.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`
+        cadastro.style.display = 'none'
+        login.style.display = 'none'
+        perfil.style.display = 'block'
+        logout.style.display = 'block'
+        logout.style.display = 'block'
+
+    }
+    function sair() {
+    sessionStorage.clear()
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'OK!',
+      text: 'Saindo de sua conta!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+
+    setTimeout(() => {
+      window.location = './index.html'
+    }, 1500);
+  }
+</script>

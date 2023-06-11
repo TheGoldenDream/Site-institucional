@@ -12,7 +12,7 @@
 <body>
     <header>
         <div class="logo">
-            <a href="#" class="image">
+            <a href="./index.html" class="image">
                 <img src="./assets/img/logo.png" style="max-width: 100px;">
             </a>
         </div>
@@ -20,10 +20,12 @@
             <li><a href="./index.html">Home</a></li>
             <li><a href="#">História</a></li>
             <li><a href="#">Records</a></li>
-            <li><a href="#">Quiz</a></li>
+            <li><a href="./quizmain.html">Quiz</a></li>
             <li><a href="./galeria.html">Galeria</a></li>
-            <li><a href="./login.html" id="Sign_In">Entrar</a>
-            <li><a href="./cadastro.html" id="Sign_In">Cadastrar-se</a></li>
+            <li><a href="./login.html" class="Sign_In" id="login">Entrar</a>
+            <li><a href="./cadastro.html" class="Sign_In" id="cadastro">Cadastrar-se</a></li>
+            <li><a id="perfil" class="Sign_In" style="cursor: pointer;"></a></li>
+            <li><a onclick="sair()" id="logout" class="Sign_In" style="cursor: pointer; padding: 5px;"><img src="../assets/img/logout.png" style="width: 31px;"></a></li>
 
         </ul>
     </header>
@@ -68,7 +70,31 @@
 </body>
 
 </html>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
+
+if(sessionStorage.NOME_USUARIO != undefined){
+        perfil.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`
+        cadastro.style.display = 'none'
+        login.style.display = 'none'
+        perfil.style.display = 'block'
+        logout.style.display = 'block'
+    }
+    function sair() {
+    sessionStorage.clear()
+    Swal.fire({
+      position: 'center',
+      icon: 'success',
+      title: 'OK!',
+      text: 'Saindo de sua conta!',
+      showConfirmButton: false,
+      timer: 1500
+    })
+
+    setTimeout(() => {
+      window.location = './index.html'
+    }, 1500);
+  }
 
 
     var copas = [
@@ -250,7 +276,9 @@
             Aos alemães foi entregue a Taça Jules Rimet e o título de vencedores da Copa do Mundo com a torcida cantando junto o hino nacional alemão. Na Alemanha, esta partida é conhecida como o Milagre de Berna. Um filme baseado na história foi lançado em 2003. Para os húngaros, a derrota foi um desastre, e o seu declínio no futebol teria início somente dois anos depois, com a Revolução Húngara.
             <br><br>
 
-            Os 11 gols marcados por Kocsis não apenas o garantiram a artilharia desta Copa, mas o tornou o recordista como artilheiro em uma Copa, superando Ademir de Menezes que havia marcado 9 tentos na copa anterior. A marca de Kocsis viria a ser quebrada na Copa seguinte por Just Fontaine e seus 13 gols.`//1954
+            Os 11 gols marcados por Kocsis não apenas o garantiram a artilharia desta Copa, mas o tornou o recordista como artilheiro em uma Copa, superando Ademir de Menezes que havia marcado 9 tentos na copa anterior. A marca de Kocsis viria a ser quebrada na Copa seguinte por Just Fontaine e seus 13 gols.
+            <br><br>
+            Com um ataque poderoso, a Hungria fez 27 gols em cinco jogos do Mundial de 1954: a maior média de uma seleção em uma Copa do Mundo até hoje (5,4 por partida).`//1954
             ,
 
 
@@ -534,7 +562,7 @@
             O outro time do grupo, a Itália, jogou três jogos péssimos na fase de classificação, porém, na hora da verdade, a mística da Azzurra incendiou a equipe, que disparou rumo ao tricampeonato. A seleção europeia venceu o primeiro jogo contra a Argentina por 2 a 1, complicando e muito a situação dos portenhos, que, como já visto, perderam do Brasil. Depois, viria um dos grandes jogos da Copa, para muitos, a grande partida, que definiu os rumos do mundial.
             <br><br>
 
-            O Show de Paolo Rossi no Sarriá: <br>
+            O Show de Paolo Rossi no Sarriá: (Tragédia do Sarriá)<br>
             Brasil e Itália se enfrentaram pelo terceiro jogo da segunda fase em seu grupo. Como a Argentina tinha perdido por 2 x 1 para a Itália, e por 3 x 1 para o Brasil, a seleção canarinho, aquela altura tida como favorita ao título, tinha a vantagem do empate para se classificar em primeiro no grupo. A maioria dos torcedores brasileiros acreditava em uma vitória tranquila, pois a Itália, até então, só havia vencido um jogo na copa, enquanto o Brasil era o único com aproveitamento de 100%. Logo no início da partida, aos 5 minutos, ataque da Itália com um cruzamento vindo da esquerda e cabeceio do artilheiro Paolo Rossi, com a defesa brasileira apenas assistindo a cabeceada do italiano. Seguiu o jogo, o Brasil não se intimidou. Ainda no 1º tempo, Zico se livra de Claudio Gentile e toca para Sócrates, o "doutor" invadiu a área e chutou colocado e forte, empatando o confronto. A Itália marcava forte a saída de bola do Brasil, e forçava o erro da seleção. Em uma reposição de bola do goleiro brasileiro Waldir Peres, Toninho Cerezzo fez um toque lateral para o meio, entre Luisinho e Falcão, o veloz Paolo Rossi tomou a bola, encaminhou-se de frente para o gol brasileiro e chutou forte, marcando 2 x 1.
             <br><br>
 
@@ -850,10 +878,10 @@
             A seleção francesa se juntaria a Itália (1934-1938), Brasil (1958-1962; 1994-1998-2002), Argentina (1986-1990) e Alemanha Ocidental (1982-1986-1990) como a equipe chegou a uma grande final em duas ou três vezes seguidas. A Argentina avançaria para uma decisão após oito anos, fazendo com duas seleções disputassem o tricampeonato, algo que ocorreu em 1970, quando Brasil e Itália disputavam o tricampeonato, conquistado pelo Brasil; em 1982, quando a Itália conquistou o tri vencendo a então bicampeã Alemanha Ocidental; em 1990, quando Alemanha e Argentina duelaram pela terceira conquista, tendo a equipe germânica logrado êxito; e em 1994, quando, novamente, Brasil e Itália disputavam o tetracampeonato, conquistado novamente pelo Brasil. Em uma disputa nos pênaltis, a Argentina conquistou seu terceiro título em uma final considerada uma das melhores de todos os tempos, quebrando um jejum de 36 anos sem ganhar uma Copa do Mundo, além de encerrar uma sequência de vitórias de times europeus imposta desde 2006.`//2022
         ]
         function trocarCopa() {
-        var copa = Number(slct_copa.value)
+        var copa_escolhida = Number(slct_copa.value)
         var contador = 0
         while (contador < historias_copas.length){
-            if(copa == contador){
+            if(copa_escolhida == contador){
                 historia.style.height = 'fit-content'
                 title.innerHTML = `Copa do mundo de ${copas[contador]}`
                 body.innerHTML = historias_copas[contador]

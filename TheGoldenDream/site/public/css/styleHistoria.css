@@ -60,7 +60,7 @@ header ul li :hover{
     transition: 0.5s;
     color: white;
 }
-header ul li #Sign_In{
+header ul li .Sign_In{
     display: inline-block;
     color: black;
     font-size: 1.2em;
@@ -130,4 +130,12 @@ aside select{
     color: white;
     height: fit-content;
     text-align: justify;
+}
+
+#perfil{
+    display: none;
+}
+
+#logout{
+    display: none;
 }
