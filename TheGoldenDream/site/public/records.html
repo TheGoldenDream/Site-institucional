@@ -20,7 +20,7 @@
             <li><a href="./index.html">Home</a></li>
             <li><a href="./historia.html">História</a></li>
             <li><a href="#">Records</a></li>
-            <li><a href="#">Quiz</a></li>
+            <li><a href="./quizmain.html">Quiz</a></li>
             <li><a href="./galeria.html">Galeria</a></li>
             <li><a href="./Login.html" class="Sign_In" id="login">Entrar</a>
             <li><a href="./cadastro.html" class="Sign_In" id="cadastro">Cadastrar-se</a></li>
@@ -33,7 +33,7 @@
         <h3 class="tituloGraficos"></h3>
         <div class="graph">
             <h3 class="tituloGraficos">
-                Mais partidas jogadas
+                Mais partidas jogadas (Jogador)
             </h3>
             <div class="graph">
                 <canvas id="myChartCanvas1"></canvas>
@@ -41,33 +41,35 @@
         </div>
         <div class="graph">
             <h3 class="tituloGraficos">
-                Mais Gols
+                Mais Gols (Jogador)
             </h3>
             <div class="graph">
                 <canvas id="myChartCanvas2"></canvas>
-            </div>
-        </div>
-        <div class="graph">
-            <h3 class="tituloGraficos">
-                Mais Gols em uma unica edição
-            </h3>
-            <div class="graph">
-                <canvas id="myChartCanvas3"></canvas>
             </div>
         </div>
     </section>
     <section class="graficos">
         <div class="graph">
             <h3 class="tituloGraficos">
-                Mais Participações
+                Mais Gols em uma unica edição (Jogador)
+            </h3>
+            <div class="graph">
+                <canvas id="myChartCanvas3"></canvas>
+            </div>
+        </div>
+        <div class="graph">
+            <h3 class="tituloGraficos">
+                Mais Participações (Seleção)
             </h3>
             <div class="graph">
                 <canvas id="myChartCanvas4"></canvas>
             </div>
         </div>
+    </section>
+    <section class="graficos">
         <div class="graph">
             <h3 class="tituloGraficos">
-                Mais Títulos
+                Mais Títulos (Seleção)
             </h3>
             <div class="graph">
                 <canvas id="myChartCanvas5"></canvas>
@@ -75,7 +77,7 @@
         </div>
         <div class="graph">
             <h3 class="tituloGraficos">
-                Mais gols em uma edição
+                Mais gols em uma edição (Seleção)
             </h3>
             <div class="graph">
                 <canvas id="myChartCanvas6"></canvas>
@@ -88,7 +90,16 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
-    window.onload = obterDadosGrafico1();
+    window.onload = obterDadosGraficos();
+
+    function obterDadosGraficos() {
+        obterDadosGrafico1()
+        obterDadosGrafico2()
+        obterDadosGrafico3()
+        obterDadosGrafico4()
+        obterDadosGrafico5()
+        obterDadosGrafico6()
+    }
 
     if (sessionStorage.NOME_USUARIO != undefined) {
         perfil.innerHTML = `Olá, ${sessionStorage.NOME_USUARIO}`
@@ -118,11 +129,100 @@
 
         fetch(`/records/obterDadosGrafico1`, { cache: 'no-store' }).then(function (response) {
             if (response.ok) {
-                response.json().then(function (resposta1) {
-                    console.log(`Dados recebidos: ${JSON.stringify(resposta1)}`);
-                    resposta1.reverse();
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
 
-                    plotarGrafico(resposta1);
+                    plotarGrafico1(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    function obterDadosGrafico2() {
+
+        fetch(`/records/obterDadosGrafico2`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    plotarGrafico2(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    function obterDadosGrafico3() {
+
+        fetch(`/records/obterDadosGrafico3`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    plotarGrafico3(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    function obterDadosGrafico4() {
+
+        fetch(`/records/obterDadosGrafico4`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    plotarGrafico4(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    function obterDadosGrafico5() {
+
+        fetch(`/records/obterDadosGrafico5`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    plotarGrafico5(resposta);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    function obterDadosGrafico6() {
+
+        fetch(`/records/obterDadosGrafico6`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+
+                    plotarGrafico6(resposta);
 
                 });
             } else {
@@ -134,7 +234,211 @@
             });
     }
 
-    function plotarGrafico(resposta) {
+    function plotarGrafico1(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Partidas Jogadas',
+                data: [],
+                fill: false,
+                borderColor: '#fff',
+                backgroundColor: 'rgb(255, 215, 0)',
+                color: '#000'
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.nome);
+            dados.datasets[0].data.push(registro.partidasjogadas);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas1`),
+            config
+        );
+    }
+    function plotarGrafico2(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Gols',
+                data: [],
+                fill: false,
+                borderColor: '#fff',
+                backgroundColor: '#c4c4c4',
+                color: '#000'
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.nome);
+            dados.datasets[0].data.push(registro.gols);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas2`),
+            config
+        );
+    }
+    function plotarGrafico3(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Gols',
+                data: [],
+                fill: false,
+                borderColor: '#fff',
+                backgroundColor: '#c4c4c4',
+                color: '#000'
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.nome);
+            dados.datasets[0].data.push(registro.golsUmaEdicao);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas3`),
+            config
+        );
+    }
+    function plotarGrafico4(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Participações',
+                data: [],
+                fill: false,
+                borderColor: '#fff',
+                backgroundColor: 'rgb(255, 215, 0)',
+                color: '#000'
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.selecao);
+            dados.datasets[0].data.push(registro.participacoes);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas4`),
+            config
+        );
+    }
+    function plotarGrafico5(resposta) {
 
         console.log('iniciando plotagem do gráfico...');
 
@@ -181,7 +485,58 @@
 
         // Adicionando gráfico criado em div na tela
         let myChart = new Chart(
-            document.getElementById(`myChartCanvas1`),
+            document.getElementById(`myChartCanvas5`),
+            config
+        );
+    }
+    function plotarGrafico6(resposta) {
+
+        console.log('iniciando plotagem do gráfico...');
+
+        // Criando estrutura para plotar gráfico - labels
+        let labels = [];
+
+        // Criando estrutura para plotar gráfico - dados
+        let dados = {
+            labels: labels,
+            datasets: [{
+                label: 'Gols',
+                data: [],
+                fill: false,
+                borderColor: '#fff',
+                backgroundColor: '#c4c4c4',
+                color: '#000'
+            }]
+        };
+
+        console.log('----------------------------------------------')
+        console.log('Estes dados foram recebidos pela funcao "obterDadosGrafico" e passados para "plotarGrafico":')
+        console.log(resposta)
+
+        // Inserindo valores recebidos em estrutura para plotar o gráfico
+        for (i = 0; i < resposta.length; i++) {
+            var registro = resposta[i];
+            labels.push(registro.selecao);
+            dados.datasets[0].data.push(registro.golsUmaEdicao);
+        }
+
+        console.log('----------------------------------------------')
+        console.log('O gráfico será plotado com os respectivos valores:')
+        console.log('Labels:')
+        console.log(labels)
+        console.log('Dados:')
+        console.log(dados.datasets)
+        console.log('----------------------------------------------')
+
+        // Criando estrutura para plotar gráfico - config
+        const config = {
+            type: 'bar',
+            data: dados,
+        };
+
+        // Adicionando gráfico criado em div na tela
+        let myChart = new Chart(
+            document.getElementById(`myChartCanvas6`),
             config
         );
     }
